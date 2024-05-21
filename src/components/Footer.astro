@@ -1,0 +1,57 @@
+---
+import { NAV_LINKS, IMPORTANT_NAV_LINKS } from "../utils/consts";
+---
+
+<footer class="w-full">
+  <nav
+    class="container max-w-5xl mx-auto py-8 px-4 min-[400px]:max-sm:px-8 grid grid-cols-2 gap-8 justify-between sm:grid-cols-4"
+  >
+    <div class="flex items-center">
+      <img src="images/logo.png" alt="Vetekso Logo" />
+    </div>
+    <a
+      class="flex justify-center items-center"
+      href="https://www.linkedin.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img src="images/linkedin.svg" alt="LinkedIn Logo" />
+    </a>
+    <div class="flex flex-col gap-4">
+      <span class="text-xl font-medium">MENÚ</span>
+      {
+        NAV_LINKS.map(({ label, pathname }) => (
+          <a
+            href={pathname}
+            class="text-white text-xl transition-colors duration-200 ease-in-out hover:text-fuchsia-100"
+          >
+            {label}
+          </a>
+        ))
+      }
+    </div>
+    <div class="flex flex-col gap-4">
+      <span class="text-xl font-medium">IMPORTANTE</span>
+      {
+        IMPORTANT_NAV_LINKS.map(({ label, pathname }) => (
+          <a
+            href={pathname}
+            class="text-white text-xl transition-colors duration-200 ease-in-out hover:text-fuchsia-100"
+          >
+            {label}
+          </a>
+        ))
+      }
+    </div>
+  </nav>
+</footer>
+
+<style lang="scss">
+  footer {
+    box-shadow: 4px 0px 4px 0px #00000040;
+
+    nav {
+      min-height: 320px;
+    }
+  }
+</style>

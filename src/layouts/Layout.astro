@@ -1,4 +1,5 @@
 ---
+import Header from "../components/Header.astro";
 import "@fontsource-variable/podkova";
 
 interface Props {
@@ -19,7 +20,10 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <slot />
+    <Header />
+    <main>
+      <slot />
+    </main>
   </body>
 </html>
 
@@ -29,9 +33,15 @@ const { title } = Astro.props;
     margin: 0;
     padding: 0;
   }
-  html {
+  html,
+  body {
+    min-height: 100vh;
     font-family: "Podkova Variable", system-ui, sans-serif;
-    font-size: 62.5%;
-    background: #13151a;
+    background: linear-gradient(141.19deg, #00105b 13.59%, #841b71 86.5%);
+    color: #d8ddf3;
+  }
+  main {
+    min-height: 100vh;
+    margin-top: 100px;
   }
 </style>

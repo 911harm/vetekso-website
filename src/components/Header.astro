@@ -9,23 +9,31 @@ const { pathname: urlPathname } = new URL(Astro.request.url);
 
 <header class="bg-blue fixed top-0 left-0 w-full z-50">
   <nav
-    class="max-w-5xl container mx-auto p-4 flex justify-between items-center"
+    class="max-w-6xl mx-auto px-6 sm:px-12 flex justify-between items-center"
   >
     <Logo client:load />
     <IconButton client:load />
-    <div class="space-x-8 w-full hidden md:block md:w-auto" id="navbar-default">
+    <div
+      class="space-x-6 min-[800px]:space-x-8 w-full hidden md:block md:w-auto"
+      id="navbar-default"
+    >
       {
-        NAV_LINKS.map(({ label, pathname }) => (
-          <a
-            href={pathname}
-            class:list={[
-              "text-white text-xl transition-colors duration-200 hover:text-fuchsia-100",
-              { "text-fuchsia-100": urlPathname === pathname },
-            ]}
-          >
-            {label}
-          </a>
-        ))
+        NAV_LINKS.map(({ label, pathname }) => {
+          const isActive = urlPathname === pathname;
+
+          return (
+            <a
+              href={pathname}
+              class:list={[
+                "text-xl transition-colors duration-200 hover:text-fuchsia-100",
+                { "text-white": !isActive },
+                { "text-fuchsia-100": isActive },
+              ]}
+            >
+              {label}
+            </a>
+          );
+        })
       }
     </div>
     <NavMenu client:load urlPathname={urlPathname} />

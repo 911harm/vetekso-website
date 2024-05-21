@@ -3,6 +3,8 @@ import Logo from "./Logo";
 import IconButton from "./IconButton";
 import NavMenu from "./NavMenu";
 import { NAV_LINKS } from "../utils/consts";
+
+const { pathname: urlPathname } = new URL(Astro.request.url);
 ---
 
 <header class="bg-blue fixed top-0 left-0 w-full z-50">
@@ -16,14 +18,17 @@ import { NAV_LINKS } from "../utils/consts";
         NAV_LINKS.map(({ label, pathname }) => (
           <a
             href={pathname}
-            class="text-white text-xl transition-colors duration-200 hover:text-fuchsia-100"
+            class:list={[
+              "text-white text-xl transition-colors duration-200 hover:text-fuchsia-100",
+              { "text-fuchsia-100": urlPathname === pathname },
+            ]}
           >
             {label}
           </a>
         ))
       }
     </div>
-    <NavMenu client:load />
+    <NavMenu client:load urlPathname={urlPathname} />
   </nav>
 </header>
 

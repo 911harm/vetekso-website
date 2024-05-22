@@ -13,7 +13,12 @@ export default {
       },
       translucent: "#D9D9D94D",
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        "custom-gradient": "linear-gradient(90deg, #aebcff 0%, #ffd5f7 100%)",
+        "custom-gradient-2": "linear-gradient(90deg, #00105B 0%, #841B71 100%)",
+      },
+    },
   },
   plugins: [],
 };

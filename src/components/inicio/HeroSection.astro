@@ -1,0 +1,42 @@
+---
+import { Image } from "astro:assets";
+import ButtonLink from "../ButtonLink.astro";
+---
+
+<section
+  class="max-w-6xl px-6 sm:px-12 py-10 lg:py-20 m-auto flex flex-col lg:flex-row gap-y-6 lg:justify-between"
+>
+  <div class="flex justify-center items-center">
+    <Image
+      class="w-[80%] max-w-[350px] max-h-[251px] lg:w-full"
+      src="/images/home.png"
+      width="350"
+      height="250"
+      loading="eager"
+      alt="Imágen de Inicio"
+    />
+  </div>
+  <div class="lg:w-2/4">
+    <h2 class="mb-6 lg:mb-12 text-center font-bold">
+      Convertimos tus ideas en experiencias tangibles
+    </h2>
+    <h3 class="mb-8 px-2">
+      En nuestro equipo, la innovación y la creatividad se fusionan para
+      ofrecerte soluciones personalizadas
+    </h3>
+    <div
+      class="flex flex-col items-center sm:flex-row sm:justify-center gap-5 sm:gap-10 text-lg sm:text-xl"
+    >
+      <ButtonLink
+        href="/contacto"
+        label="Conectémonos"
+        btnClass="bg-custom-gradient text-blue "
+      />
+      <ButtonLink
+        href="/planes"
+        label="Nuestros Planes"
+        btnClass="bg-custom-gradient text-blue "
+      />
+    </div>
+  </div>
+</section>

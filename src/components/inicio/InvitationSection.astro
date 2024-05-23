@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import ButtonLink from "../ButtonLink.astro";
+import ButtonLink from "../shared/ButtonLink.astro";
 ---
 
 <section class="flex flex-col bg-translucent">
@@ -43,7 +43,7 @@ import ButtonLink from "../ButtonLink.astro";
       <ButtonLink
         href="/planes"
         label="Nuestros Planes"
-        btnClass="bg-custom-gradient-2 text-white md:self-start"
+        btnClasses="bg-custom-gradient-2 text-white hover:outline-white md:self-start"
       />
     </div>
   </div>

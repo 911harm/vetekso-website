@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useStore } from "@nanostores/react";
-import { isMenuOpen } from "../store";
+import { isMenuOpen } from "../../store";
 
 const Logo = () => {
   const $isMenuOpen = useStore(isMenuOpen);

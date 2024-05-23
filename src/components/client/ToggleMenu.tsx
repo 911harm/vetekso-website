@@ -1,7 +1,7 @@
 import { useStore } from "@nanostores/react";
-import { isMenuOpen } from "../store";
-import MenuIcon from "./icons/MenuIcon";
-import CloseIcon from "./icons/CloseIcon";
+import { isMenuOpen } from "../../store";
+import MenuIcon from "./MenuIcon";
+import CloseIcon from "./CloseIcon";
 
 const IconButton = () => {
   const $isMenuOpen = useStore(isMenuOpen);

@@ -1,6 +1,6 @@
 import { useStore } from "@nanostores/react";
-import { NAV_LINKS } from "../utils/consts";
-import { isMenuOpen } from "../store";
+import { NAV_LINKS } from "../../utils/consts";
+import { isMenuOpen } from "../../store";
 
 interface NavMenuProps {
   urlPathname: string;

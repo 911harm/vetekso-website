@@ -1,8 +1,8 @@
 ---
-import Logo from "./Logo";
-import IconButton from "./IconButton";
-import NavMenu from "./NavMenu";
-import { NAV_LINKS } from "../utils/consts";
+import Logo from "../client/Logo";
+import ToggleMenu from "../client/ToggleMenu";
+import NavMenu from "../client/NavMenu";
+import { NAV_LINKS } from "../../utils/consts";
 
 const { pathname: urlPathname } = new URL(Astro.request.url);
 ---
@@ -12,7 +12,7 @@ const { pathname: urlPathname } = new URL(Astro.request.url);
     class="max-w-6xl mx-auto px-6 sm:px-12 flex justify-between items-center"
   >
     <Logo client:load />
-    <IconButton client:load />
+    <ToggleMenu client:load />
     <div
       class="space-x-6 min-[800px]:space-x-8 w-full hidden md:block md:w-auto"
       id="navbar-default"

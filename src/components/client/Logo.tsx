@@ -22,7 +22,9 @@ const Logo = () => {
     };
   }, [$isMenuOpen]);
 
-  return <img className={logoClass} src="images/logo.png" alt="Vetekso Logo" />;
+  return (
+    <img className={logoClass} src="/images/logo.png" alt="Vetekso Logo" />
+  );
 };
 
 export default Logo;

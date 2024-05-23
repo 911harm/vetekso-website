@@ -1,10 +1,8 @@
 ---
 import Logo from "../client/Logo";
 import ToggleMenu from "../client/ToggleMenu";
+import NavLinks from "../client/NavLinks";
 import NavMenu from "../client/NavMenu";
-import { NAV_LINKS } from "../../utils/consts";
-
-const { pathname: urlPathname } = new URL(Astro.request.url);
 ---
 
 <header class="bg-blue fixed top-0 left-0 w-full z-50">
@@ -13,30 +11,8 @@ const { pathname: urlPathname } = new URL(Astro.request.url);
   >
     <Logo client:load />
     <ToggleMenu client:load />
-    <div
-      class="space-x-6 min-[800px]:space-x-8 w-full hidden md:block md:w-auto"
-      id="navbar-default"
-    >
-      {
-        NAV_LINKS.map(({ label, pathname }) => {
-          const isActive = urlPathname === pathname;
-
-          return (
-            <a
-              href={pathname}
-              class:list={[
-                "text-xl transition-colors duration-200 hover:text-fuchsia-100",
-                { "text-white": !isActive },
-                { "text-fuchsia-100": isActive },
-              ]}
-            >
-              {label}
-            </a>
-          );
-        })
-      }
-    </div>
-    <NavMenu client:load urlPathname={urlPathname} />
+    <NavLinks client:load currentUrl={Astro.request.url} />
+    <NavMenu client:load currentUrl={Astro.request.url} />
   </nav>
 </header>
 

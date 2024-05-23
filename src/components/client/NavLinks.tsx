@@ -1,17 +1,12 @@
-import { useStore } from "@nanostores/react";
 import { NAV_LINKS } from "../../utils/consts";
-import { isMenuOpen } from "../../store";
 
-const NavMenu = ({ currentUrl }: { currentUrl: string }) => {
-  const $isMenuOpen = useStore(isMenuOpen);
+const NavLinks = ({ currentUrl }: { currentUrl: string }) => {
   const { pathname: currentPathname } = new URL(currentUrl);
-
-  const navMenuClass = $isMenuOpen ? "" : "-translate-y-full";
 
   return (
     <div
-      className={`w-screen h-screen absolute top-0 end-0 p-4 flex flex-col justify-center items-center gap-8 bg-black bg-opacity-95 transition-transform duration-500 md:hidden ${navMenuClass}`}
-      id="menu"
+      className="space-x-6 min-[800px]:space-x-8 w-full hidden md:block md:w-auto"
+      id="navbar-default"
     >
       {NAV_LINKS.map(({ label, pathname }) => {
         const isActive =
@@ -21,7 +16,7 @@ const NavMenu = ({ currentUrl }: { currentUrl: string }) => {
 
         return (
           <a
-            key={label}
+            key={`NavLink-${label}`}
             href={pathname}
             className={`${isActive ? "text-fuchsia-100" : "text-white"} text-xl transition-colors duration-200 hover:text-fuchsia-100`}
           >
@@ -33,4 +28,4 @@ const NavMenu = ({ currentUrl }: { currentUrl: string }) => {
   );
 };
 
-export default NavMenu;
+export default NavLinks;

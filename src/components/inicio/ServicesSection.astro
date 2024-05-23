@@ -1,0 +1,110 @@
+---
+import Image from "astro/components/Image.astro";
+import ButtonLink from "../shared/ButtonLink.astro";
+
+const SERVICES = [
+  {
+    img: "web-assessment.png",
+    label: "Asesoría Web e Investigación",
+  },
+  {
+    img: "redesign.png",
+    label: "Diseño y Re-Diseño Web",
+  },
+  {
+    img: "customization.png",
+    label: "Customización y Desarrollo",
+  },
+  {
+    img: "seo.png",
+    label: "Posicionamiento SEO",
+  },
+  {
+    img: "back.png",
+    label: "Back Office",
+  },
+  {
+    img: "support.png",
+    label: "Soporte Técnico",
+  },
+];
+---
+
+<section class="flex flex-col bg-translucent">
+  <div class="w-full max-w-6xl px-6 sm:px-12 py-10 m-auto">
+    <h2 class="mb-6 text-center font-semibold">
+      ¿Qué servicio necesitas en tu negocio?
+    </h2>
+    <div class="gridContainer grid gap-10 md:gap-16 justify-around">
+      {
+        SERVICES.map((item) => (
+          <figure class="w-full mx-auto flex flex-col items-center">
+            <Image
+              class="m-auto mb-2"
+              src={`/images/${item.img}`}
+              width="180"
+              height="180"
+              loading="lazy"
+              alt={`Imágen de ${item.label}`}
+            />
+            <div
+              class={`
+              h-[50px] md:h-[75px] w-full md:min-w-[180px] px-2
+              flex justify-center items-center text-center
+              bg-custom-gradient text-blue text-xs md:text-base font-semibold rounded-md
+              outline outline-2 outline-transparent
+              hover:text-[#AEBCFF] hover:outline-[#AEBCFF] hoverBgTransparent
+              cursor-default
+              `}
+            >
+              {item.label}
+            </div>
+          </figure>
+        ))
+      }
+    </div>
+    <ButtonLink
+      href="/planes"
+      label="Nuestros Planes"
+      btnClasses="mx-auto mt-14 bg-custom-gradient-2 text-white hover:outline-white"
+    />
+  </div>
+</section>
+
+<style lang="scss">
+  .gridContainer {
+    grid-template-columns: repeat(auto-fill, 100px);
+
+    figure {
+      .hoverBgTransparent {
+        &:hover {
+          background: transparent;
+        }
+      }
+    }
+
+    @media (min-width: 430px) {
+      justify-content: space-between;
+    }
+
+    @media (min-width: 480px) {
+      grid-template-columns: repeat(3, 120px);
+    }
+
+    @media (min-width: 620px) {
+      grid-template-columns: repeat(3, 140px);
+    }
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 170px);
+    }
+
+    @media (min-width: 1024px) {
+      justify-content: space-around;
+    }
+
+    @media (min-width: 1440px) {
+      justify-content: space-between;
+    }
+  }
+</style>

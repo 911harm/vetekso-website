@@ -2,10 +2,8 @@ import { useStore } from "@nanostores/react";
 import { NAV_LINKS } from "../../utils/consts";
 import { isMenuOpen } from "../../store";
 
-const NavMenu = ({ currentUrl }: { currentUrl: string }) => {
+const NavMenu = ({ currentPathname }: { currentPathname: string }) => {
   const $isMenuOpen = useStore(isMenuOpen);
-  const { pathname: currentPathname } = new URL(currentUrl);
-
   const navMenuClass = $isMenuOpen ? "" : "-translate-y-full";
 
   return (

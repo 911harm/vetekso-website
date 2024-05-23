@@ -1,8 +1,6 @@
 import { NAV_LINKS } from "../../utils/consts";
 
-const NavLinks = ({ currentUrl }: { currentUrl: string }) => {
-  const { pathname: currentPathname } = new URL(currentUrl);
-
+const NavLinks = ({ currentPathname }: { currentPathname: string }) => {
   return (
     <div
       className="space-x-6 min-[800px]:space-x-8 w-full hidden md:block md:w-auto"

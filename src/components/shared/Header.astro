@@ -11,8 +11,8 @@ import NavMenu from "../client/NavMenu";
   >
     <Logo client:load />
     <ToggleMenu client:load />
-    <NavLinks client:load currentUrl={Astro.request.url} />
-    <NavMenu client:load currentUrl={Astro.request.url} />
+    <NavLinks client:load currentPathname={Astro.url.pathname} />
+    <NavMenu client:load currentPathname={Astro.url.pathname} />
   </nav>
 </header>
 

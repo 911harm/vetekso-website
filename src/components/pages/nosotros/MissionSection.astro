@@ -1,0 +1,44 @@
+---
+import { Image } from "astro:assets";
+---
+
+<section class="flex flex-col bg-translucent">
+  <div
+    class="w-full max-w-6xl px-6 sm:px-12 py-10 m-auto flex flex-col justify-center items-center gap-5 lg:flex-row lg:flex-row-reverse lg:gap-10 xl:gap-32"
+  >
+    <figure>
+      <Image
+        class="max-w-[200px] min-[500px]:max-w-[300px] lg:max-w-max"
+        src="/images/mission.png"
+        width="400"
+        height="400"
+        loading="eager"
+        alt="Imágen de misión de la empresa"
+      />
+    </figure>
+    <section class="flex flex-col gap-4">
+      <h2 class="text-center font-extrabold">
+        Crea tu Futuro Digital con Nosotros
+      </h2>
+      <p>
+        Nuestro objetivo es simple pero poderoso: queremos ayudarte a construir
+        una presencia en línea que destaque entre la multitud. ¿Cómo lo
+        logramos? ¡Con rapidez, confianza y calidad en cada paso del proceso!
+        Desde el diseño hasta la optimización, estamos aquí para brindarte las
+        herramientas y el apoyo que necesitas para alcanzar tus metas digitales.
+      </p>
+      <h3 class="font-extrabold">Nuestra Misión</h3>
+      <p>
+        Proporcionar soluciones integrales de tecnología de la información,
+        especializándonos en el diseño de experiencia de usuarios, desarrollo y
+        soporte de sitios web. Nos comprometemos a ofrecer servicios rápidos,
+        confiables y de alta calidad, garantizando la satisfacción total de
+        nuestros clientes y potenciando su presencia digital. Creemos en la
+        innovación constante y en la adaptación a las últimas tendencias
+        tecnológicas para ofrecer resultados sobresalientes. Nuestra meta es
+        ayudar a las empresas a alcanzar sus objetivos digitales de manera
+        eficiente y efectiva.
+      </p>
+    </section>
+  </div>
+</section>

@@ -1,9 +1,11 @@
 ---
 import { Image } from "astro:assets";
 import { NAV_LINKS, IMPORTANT_NAV_LINKS } from "../../utils/consts";
+
+const { pathname } = Astro.url;
 ---
 
-<footer class="w-full">
+<footer class:list={["w-full", { "bg-translucent": pathname === "/planes" }]}>
   <nav
     class="max-w-6xl mx-auto py-8 px-6 sm:px-12 min-[400px]:max-sm:px-8 grid grid-cols-2 gap-8 justify-between sm:grid-cols-4"
   >

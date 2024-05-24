@@ -5,13 +5,14 @@ import "@fontsource-variable/podkova";
 
 interface Props {
   title: string;
+  pageId?: string;
 }
 
-const { title } = Astro.props;
+const { title, pageId } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" id={pageId}>
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
@@ -45,6 +46,10 @@ const { title } = Astro.props;
   main {
     min-height: 100vh;
     margin-top: 100px;
+  }
+
+  #planes footer {
+    background: #d9d9d94d;
   }
 
   h2 {

@@ -2,7 +2,7 @@
 import PlanCard from "./PlanCard.astro";
 ---
 
-<div class="carousel min-[900px]:hidden">
+<div class="carousel rounded-3xl min-[900px]:hidden">
   <input
     type="radio"
     name="slides"
@@ -22,10 +22,12 @@ import PlanCard from "./PlanCard.astro";
   </div>
 
   <label for="slide1" class="carousel__navlabel prev" id="nav1">
-    <span></span>
+    <span aria-hidden="true"></span>
+    <span class="sr-only">Previous Slide</span>
   </label>
   <label for="slide2" class="carousel__navlabel next" id="nav2">
-    <span></span>
+    <span aria-hidden="true"></span>
+    <span class="sr-only">Next Slide</span>
   </label>
 </div>
 
@@ -41,7 +43,7 @@ import PlanCard from "./PlanCard.astro";
       position: relative;
       width: 200%;
       display: flex;
-      transition: transform 0.5s ease;
+      transition: transform 0.7s ease;
     }
 
     &__item {

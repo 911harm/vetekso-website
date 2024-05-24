@@ -60,7 +60,19 @@ const { title } = Astro.props;
   }
 
   h3 {
-    font-size: 18px;
+    font-size: 20px;
+
+    @media (min-width: 400px) {
+      font-size: 26px;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 32px;
+    }
+  }
+
+  h4 {
+    font-size: 16px;
 
     @media (min-width: 400px) {
       font-size: 20px;

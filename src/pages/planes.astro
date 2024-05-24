@@ -1,5 +1,51 @@
 ---
+import ButtonLink from "../components/shared/ButtonLink.astro";
+import Carousel from "../components/shared/Carousel.astro";
+import PlanCard from "../components/shared/PlanCard.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="VETEK SO - Planes" />
+<Layout title="VETEK SO - Planes">
+  <section
+    class="max-w-6xl px-6 sm:px-12 py-10 m-auto flex flex-col justify-center items-center"
+  >
+    <h2 class="font-extrabold text-center">Explora Nuestros Planes</h2>
+    <p class="mb-10 md:text-2xl text-center font-semibold">
+      Elige el plan ideal para las necesidades de tu negocio
+    </p>
+    <div class="w-full justify-around hidden min-[900px]:flex">
+      <PlanCard plan="Estándar" />
+      <PlanCard plan="Pro" />
+    </div>
+    <Carousel />
+    <ButtonLink
+      href="/contacto"
+      label="Reservar"
+      btnClasses="mt-10 bg-custom-gradient text-blue hover:text-white hover:outline-white"
+    />
+  </section>
+</Layout>
+
+<style lang="scss">
+  section {
+    @media (min-height: 825px) {
+      height: 100vh;
+    }
+    @media (min-height: 1024px) {
+      p {
+        margin-bottom: 60px;
+      }
+      a {
+        margin-top: 60px;
+      }
+    }
+    @media (min-height: 1200px) {
+      p {
+        margin-bottom: 100px;
+      }
+      a {
+        margin-top: 100px;
+      }
+    }
+  }
+</style>

@@ -3,7 +3,7 @@ import { NAV_LINKS } from "../../utils/consts";
 const NavLinks = ({ currentPathname }: { currentPathname: string }) => {
   return (
     <div
-      className="space-x-6 min-[800px]:space-x-8 w-full hidden md:block md:w-auto"
+      className="space-x-6 min-[800px]:space-x-10 w-full hidden md:block md:w-auto"
       id="navbar-default"
     >
       {NAV_LINKS.map(({ label, pathname }) => {

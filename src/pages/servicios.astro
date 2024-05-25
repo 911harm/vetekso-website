@@ -53,7 +53,7 @@ const SERVICES = [
         SERVICES.map((item, index) => (
           <article class="w-full">
             <Image
-              class="m-auto mb-2 rounded bg-shadow"
+              class="m-auto mb-2 rounded bg-shadow shadow-[2px_2px_8px_rgba(0,0,0,0.2)]"
               src={`/images/${item.image}`}
               width="350"
               height="230"
@@ -81,7 +81,6 @@ const SERVICES = [
     img {
       max-width: 100%;
       aspect-ratio: 1.5;
-      box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
     }
 
     @media (min-width: 500px) {

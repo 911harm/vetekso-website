@@ -1,5 +1,38 @@
 ---
+import ContactForm from "../components/client/ContactForm";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="VETEK SO - Contacto" />
+<Layout title="VETEK SO - Contacto" pageId="contacto">
+  <section
+    class="min-h-screen max-w-6xl px-6 sm:px-12 py-10 m-auto flex flex-col lg:flex-row-reverse justify-center items-center gap-8"
+  >
+    <div class="lg:w-1/2 flex flex-col gap-8 lg:mb-8">
+      <h1
+        class="min-[400px]:w-4/5 min-[600px]:max-lg:text-center lg:w-full min-[1100px]:w-[85%] m-auto text-balance"
+      >
+        Tu próximo paso hacia el crecimiento.
+      </h1>
+      <p class="text-lg md:max-[850px]:text-base lg:text-2xl">
+        ¿Listo para elevar tu negocio al siguiente nivel? En nuestro equipo,
+        estamos listos para ayudarte a alcanzar tus metas. ¡Hablemos hoy mismo y
+        descubre cómo podemos colaborar para hacer realidad tus proyectos!
+      </p>
+    </div>
+    <ContactForm />
+  </section>
+</Layout>
+
+<style lang="scss">
+  section {
+    @media (min-height: 1200px) {
+      flex-direction: column;
+      div {
+        width: 80%;
+        h1 {
+          text-align: center;
+        }
+      }
+    }
+  }
+</style>

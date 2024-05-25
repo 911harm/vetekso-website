@@ -49,8 +49,23 @@ const { title, pageId } = Astro.props;
   }
 
   #planes footer,
-  #servicios footer {
+  #servicios footer,
+  #contacto footer {
     background: #d9d9d94d;
+  }
+
+  h1 {
+    font-weight: 600;
+    font-size: 48px;
+    text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
+
+    @media (min-width: 768px) {
+      font-size: 60px;
+    }
+
+    @media (min-width: 1200px) {
+      font-size: 70px;
+    }
   }
 
   h2 {
@@ -92,6 +107,53 @@ const { title, pageId } = Astro.props;
   a {
     @media (min-width: 400px) {
       font-size: 20px;
+    }
+  }
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  .checkbox-container {
+    display: inline-block;
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 18px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #000;
+      border-radius: 4px;
+      background-color: #fff;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 5px;
+      top: 2px;
+      width: 8px;
+      height: 14px;
+      border: solid #fff;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    input[type="checkbox"]:checked + .checkbox-container::before {
+      background-color: #000;
+    }
+
+    input[type="checkbox"]:checked + .checkbox-container::after {
+      opacity: 1;
     }
   }
 </style>

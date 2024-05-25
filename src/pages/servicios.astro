@@ -1,5 +1,111 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
+import ButtonLink from "../components/shared/ButtonLink.astro";
+
+const SERVICES = [
+  {
+    image: "web-assessment.jpg",
+    label: "Asesoria web e Investigación",
+    description:
+      "Ofrece orientación para mejorar la presencia en línea de un negocio y analiza el mercado y la competencia para diseñar estrategias personalizadas y efectivas.",
+  },
+  {
+    image: "redesign.jpg",
+    label: "Diseño y Re-Diseño Web",
+    description:
+      "Son esenciales para crear una experiencia en línea efectiva y atractiva que satisfaga las necesidades de los usuarios y ayude a alcanzar los objetivos comerciales u organizativos.",
+  },
+  {
+    image: "customization.jpg",
+    label: "Customización y Desarrollo",
+    description:
+      "la customización web se centra en adaptar un sitio existente a las necesidades específicas, mientras que el desarrollo web implica la creación o modificación de un sitio web para agregar nuevas características o mejorar su funcionamiento. Ambos son procesos fundamentales para crear sitios web efectivos y satisfactorios para los usuarios.",
+  },
+  {
+    image: "seo.jpg",
+    label: "Posicionamiento SEO",
+    description:
+      "Implica optimizar un sitio web para mejorar su visibilidad en las búsquedas en línea, aumentando así el tráfico y la autoridad del sitio",
+  },
+  {
+    image: "back.jpg",
+    label: "Back Office",
+    description:
+      "Gestiona las operaciones internas de una empresa, incluyendo funciones administrativas y de apoyo como recursos humanos y contabilidad.",
+  },
+  {
+    image: "support.jpg",
+    label: "Soporte Técnico",
+    description:
+      "Ayuda a los usuarios a utilizar y mantener la tecnología de manera eficiente, asegurando que puedan aprovechar al máximo sus dispositivos, software y servicios digitales.",
+  },
+];
 ---
 
-<Layout title="VETEK SO - Servicios" />
+<Layout title="VETEK SO - Servicios" pageId="servicios">
+  <section
+    class="max-w-6xl px-6 sm:px-12 py-10 m-auto flex flex-col justify-center items-center gap-8"
+  >
+    <h2 class="font-extrabold">Nuestros Servicios</h2>
+    <div class="gridContainer w-full grid gap-10 md:gap-16 justify-around">
+      {
+        SERVICES.map((item, index) => (
+          <article class="w-full">
+            <Image
+              class="m-auto mb-2 rounded bg-shadow"
+              src={`/images/${item.image}`}
+              width="350"
+              height="230"
+              loading={index > 1 ? "lazy" : "eager"}
+              alt={`Imágen de ${item.label}`}
+            />
+            <h3 class="my-2 text-center font-extrabold">{item.label}</h3>
+            <p>{item.description}</p>
+          </article>
+        ))
+      }
+    </div>
+    <ButtonLink
+      href="/planes"
+      label="Nuestros Planes"
+      btnClasses="mx-auto mt-4 bg-custom-gradient hover:bg-none hover:bg-shadow text-blue-500 hover:border-white hover:border-[3px] hover:text-white"
+    />
+  </section>
+</Layout>
+
+<style lang="scss">
+  .gridContainer {
+    grid-template-columns: repeat(1, 90%);
+
+    img {
+      max-width: 100%;
+      aspect-ratio: 1.5;
+      box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    @media (min-width: 500px) {
+      grid-template-columns: repeat(1, 80%);
+    }
+
+    @media (min-width: 500px) {
+      grid-template-columns: repeat(1, 70%);
+    }
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 40%);
+    }
+
+    @media (min-width: 900px) {
+      // grid-template-columns: repeat(2, 40%);
+    }
+
+    @media (min-width: 1024px) {
+      justify-content: space-evenly;
+    }
+
+    @media (min-width: 1440px) {
+      justify-content: space-between;
+    }
+  }
+</style>

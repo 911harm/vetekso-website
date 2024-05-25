@@ -4,7 +4,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        blue: { 100: "#aebcff", 500: "#00105B" },
+        blue: {
+          100: "#aebcff",
+          500: "#00105B",
+        },
         fuchsia: {
           100: "#dd78cb",
           500: "#841B71",

@@ -23,7 +23,11 @@ const Logo = () => {
   }, [$isMenuOpen]);
 
   return (
-    <img className={logoClass} src="/images/logo.png" alt="Vetekso Logo" />
+    <img
+      className={`${logoClass} max-[500px]:max-h-[24px]`}
+      src="/images/logo.png"
+      alt="Vetekso Logo"
+    />
   );
 };
 

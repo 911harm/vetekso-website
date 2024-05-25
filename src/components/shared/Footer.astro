@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import { NAV_LINKS, IMPORTANT_NAV_LINKS } from "../../utils/consts";
+import LinkedinIcon from "./LinkedinIcon.astro";
 ---
 
 <footer class="w-full">
@@ -21,15 +22,9 @@ import { NAV_LINKS, IMPORTANT_NAV_LINKS } from "../../utils/consts";
       target="_blank"
       rel="noopener noreferrer"
     >
-      <Image
-        src="/icons/linkedin.svg"
-        width="40"
-        height="40"
-        alt="LinkedIn Logo"
-      />
+      <LinkedinIcon />
     </a>
-    <div class="flex flex-col gap-4">
-      <span class="min-[400px]:text-xl font-medium">MENÚ</span>
+    <div class="flex flex-col justify-center gap-4">
       {
         NAV_LINKS.map(({ label, pathname }) => (
           <a
@@ -41,7 +36,7 @@ import { NAV_LINKS, IMPORTANT_NAV_LINKS } from "../../utils/consts";
         ))
       }
     </div>
-    <div class="flex flex-col gap-4">
+    <div class="flex flex-col justify-center gap-4">
       <span class="min-[400px]:text-xl font-medium">IMPORTANTE</span>
       {
         IMPORTANT_NAV_LINKS.map(({ label, pathname }) => (
@@ -60,7 +55,6 @@ import { NAV_LINKS, IMPORTANT_NAV_LINKS } from "../../utils/consts";
 <style lang="scss">
   footer {
     box-shadow: 4px 0px 4px 0px #00000040;
-
     nav {
       min-height: 320px;
     }

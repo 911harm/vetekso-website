@@ -14,16 +14,12 @@ const { label, btnClasses } = Astro.props;
   ${btnClasses} w-[90%] max-w-56 max-h-11 py-2 px-4 
   flex justify-center items-center 
   md:text-2xl font-semibold rounded-[5px] 
-  outline outline-[3px] outline-transparent cursor-pointer
+  cursor-pointer
   `}>{label}</a
 >
 
 <style lang="scss">
   a {
     box-shadow: 0px 4px 10px 0px #00000040;
-    transition: all 0.2s ease-in-out;
-    &:hover {
-      background: transparent;
-    }
   }
 </style>

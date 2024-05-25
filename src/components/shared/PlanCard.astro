@@ -13,7 +13,7 @@ const isPro = plan.toLowerCase() === "pro";
   <div
     class={`${isPro ? "bg-fuchsia-500 text-white" : ""} px-6 pt-5 flex flex-col items-center rounded-t-2xl`}
   >
-    <h3 class={`${isPro ? "" : "text-blue"} text-2xl font-bold`}>
+    <h3 class={`${isPro ? "" : "text-blue-500"} text-2xl font-bold`}>
       {plan}
     </h3>
     <p class="text-center font-medium">
@@ -29,8 +29,8 @@ const isPro = plan.toLowerCase() === "pro";
       label="Contratar plan"
       btnClasses={`${
         isPro
-          ? "bg-custom-gradient text-blue hover:text-white hover:outline-white z-10"
-          : "bg-custom-gradient-2 text-white hover:text-fuchsia-500 hover:outline-fuchsia-500 z-10"
+          ? "bg-custom-gradient hover:bg-none hover:bg-shadow text-blue-500 hover:text-white hover:border-white hover:border-[3px] z-10"
+          : "bg-custom-gradient-2 hover:bg-none text-white hover:text-fuchsia-500 hover:border-fuchsia-500 hover:border-[3px] z-10"
       }`}
     />
   </div>
@@ -66,8 +66,7 @@ const isPro = plan.toLowerCase() === "pro";
   .card {
     width: 90%;
     max-width: 350px;
-    box-shadow: 0px 0px 6px 0px #841b71;
-
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
     .wave {
       height: 80px;
       overflow: hidden;
@@ -97,8 +96,8 @@ const isPro = plan.toLowerCase() === "pro";
       }
     }
 
-    @media (min-width: 350px) {
-      box-shadow: 0px 0px 10px 0px #841b71;
+    @media (min-width: 400px) {
+      box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
     }
   }
 </style>

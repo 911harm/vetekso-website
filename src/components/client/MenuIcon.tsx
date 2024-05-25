@@ -9,7 +9,7 @@ const MenuIcon = () => {
       <path
         d="M5 8a2 2 0 1 0 0 4h40a2 2 0 1 0 0-4zm0 15a2 2 0 1 0 0 4h40a2 2 0 1 0 0-4zm0 15a2 2 0 1 0 0 4h40a2 2 0 1 0 0-4z"
         transform="scale(5.12)"
-        fill="currentColor"
+        fill="#fff"
         strokeMiterlimit="10"
         fontFamily="none"
         fontWeight="none"

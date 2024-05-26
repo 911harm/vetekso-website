@@ -35,3 +35,26 @@ export const IMPORTANT_NAV_LINKS = [
     pathname: "/planes",
   },
 ];
+
+export const INPUT_PROPS = [
+  {
+    name: "name",
+    placeholder: "*Nombre",
+  },
+  {
+    name: "company",
+    placeholder: "*Empresa",
+  },
+  {
+    name: "email",
+    placeholder: "*Correo",
+  },
+  {
+    name: "country",
+    placeholder: "*País",
+  },
+  {
+    name: "phone",
+    placeholder: "*Teléfono",
+  },
+];

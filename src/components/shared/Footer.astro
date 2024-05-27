@@ -27,12 +27,14 @@ import LinkedinIcon from "./LinkedinIcon.astro";
     <div class="flex flex-col justify-center gap-4">
       {
         NAV_LINKS.map(({ label, pathname }) => (
-          <a
-            href={pathname}
-            class="text-white transition-colors duration-200 ease-in-out hover:text-fuchsia-100"
-          >
-            {label}
-          </a>
+          <span>
+            <a
+              href={pathname}
+              class="inline-block text-white transition-colors duration-200 ease-in-out hover:text-fuchsia-100"
+            >
+              {label}
+            </a>
+          </span>
         ))
       }
     </div>
@@ -40,12 +42,14 @@ import LinkedinIcon from "./LinkedinIcon.astro";
       <span class="min-[400px]:text-xl font-medium">IMPORTANTE</span>
       {
         IMPORTANT_NAV_LINKS.map(({ label, pathname }) => (
-          <a
-            href={pathname}
-            class="text-white transition-colors duration-200 ease-in-out hover:text-fuchsia-100"
-          >
-            {label}
-          </a>
+          <span>
+            <a
+              href={pathname}
+              class="text-white transition-colors duration-200 ease-in-out hover:text-fuchsia-100"
+            >
+              {label}
+            </a>
+          </span>
         ))
       }
     </div>

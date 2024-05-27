@@ -23,10 +23,6 @@ export const NAV_LINKS = [
 
 export const IMPORTANT_NAV_LINKS = [
   {
-    label: "Términos y Condiciones",
-    pathname: "/terminos-y-condiciones",
-  },
-  {
     label: "Políticas de Tratamiento de Datos",
     pathname: "/politicas-de-tratamiento-de-datos",
   },

@@ -24,11 +24,11 @@ export const NAV_LINKS = [
 export const IMPORTANT_NAV_LINKS = [
   {
     label: "Políticas de Tratamiento de Datos",
-    pathname: "/politicas-de-tratamiento-de-datos",
+    pathname: "/tratamiento-de-datos",
   },
   {
     label: "Políticas de Privacidad",
-    pathname: "/planes",
+    pathname: "/politicas-de-privacidad",
   },
 ];
 

@@ -41,11 +41,18 @@ const Checkbox = ({ checked, onChange }: CheckboxProps) => {
         <a
           className="text-base text-fuchsia-100"
           href="/politicas-de-privacidad"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           Politícas de Privacidad
         </a>{" "}
         y{" "}
-        <a className="text-base text-fuchsia-100" href="/tratamiento-de-datos">
+        <a
+          className="text-base text-fuchsia-100"
+          href="/tratamiento-de-datos"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Tratamiento de Datos
         </a>
       </span>

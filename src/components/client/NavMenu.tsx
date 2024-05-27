@@ -4,12 +4,14 @@ import { isMenuOpen } from "../../store";
 
 const NavMenu = ({ currentPathname }: { currentPathname: string }) => {
   const $isMenuOpen = useStore(isMenuOpen);
-  const asideClass = $isMenuOpen ? "bg-shadow-2 z-40" : "bg-transparent z-[-1]";
+  const asideClass = $isMenuOpen
+    ? "h-screen w-screen bg-shadow-2 z-40"
+    : "bg-transparent z-[-1]";
   const navClass = $isMenuOpen ? "" : "-translate-x-full";
 
   return (
     <aside
-      className={`absolute top-0 start-0 h-screen w-screen transition-background duration-500 ${asideClass}`}
+      className={`absolute top-0 start-0 transition-background duration-500 ${asideClass}`}
     >
       <nav
         className={`w-[230px] h-screen p-[38px] flex flex-col items-center gap-8 bg-white md:hidden rounded-e-lg transition-transform duration-500 ${navClass}`}

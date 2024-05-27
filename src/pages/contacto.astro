@@ -7,7 +7,7 @@ import Layout from "../layouts/Layout.astro";
   <section
     class="min-h-screen max-w-6xl px-6 sm:px-12 py-10 m-auto flex flex-col lg:flex-row-reverse justify-center items-center gap-8"
   >
-    <div class="lg:w-1/2 flex flex-col gap-8 lg:mb-8">
+    <div class="lg:w-1/2 flex flex-col gap-8 lg:mb-32">
       <h1
         class="min-[400px]:w-4/5 min-[600px]:max-lg:text-center lg:w-full min-[1100px]:w-[85%] m-auto text-balance"
       >
@@ -28,6 +28,7 @@ import Layout from "../layouts/Layout.astro";
     @media (min-height: 1200px) {
       flex-direction: column;
       div {
+        margin-bottom: 20px;
         width: 80%;
         h1 {
           text-align: center;

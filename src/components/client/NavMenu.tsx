@@ -11,7 +11,7 @@ const NavMenu = ({ currentPathname }: { currentPathname: string }) => {
 
   return (
     <aside
-      className={`absolute top-0 start-0 transition-background duration-500 ${asideClass}`}
+      className={`absolute top-0 start-0 transition-background duration-100 ${asideClass}`}
     >
       <nav
         className={`w-[230px] h-screen p-[38px] flex flex-col items-center gap-8 bg-white md:hidden rounded-e-lg transition-transform duration-500 ${navClass}`}

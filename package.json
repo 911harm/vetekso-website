@@ -13,6 +13,7 @@
     "@astrojs/check": "^0.7.0",
     "@astrojs/react": "^3.3.4",
     "@astrojs/tailwind": "^5.1.0",
+    "@emailjs/browser": "^4.3.3",
     "@fontsource-variable/podkova": "^5.0.20",
     "@nanostores/react": "^0.7.2",
     "@types/react": "^18.3.2",

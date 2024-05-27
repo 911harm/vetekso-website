@@ -4,30 +4,42 @@ import { isMenuOpen } from "../../store";
 
 const NavMenu = ({ currentPathname }: { currentPathname: string }) => {
   const $isMenuOpen = useStore(isMenuOpen);
-  const navMenuClass = $isMenuOpen ? "" : "-translate-y-full";
+  const asideClass = $isMenuOpen ? "bg-shadow-2 z-40" : "bg-transparent z-[-1]";
+  const navClass = $isMenuOpen ? "" : "-translate-x-full";
 
   return (
-    <div
-      className={`w-screen h-screen absolute top-0 end-0 p-4 flex flex-col justify-center items-center gap-8 bg-black bg-opacity-95 transition-transform duration-500 md:hidden ${navMenuClass}`}
-      id="menu"
+    <aside
+      className={`absolute top-0 start-0 h-screen w-screen transition-background duration-500 ${asideClass}`}
     >
-      {NAV_LINKS.map(({ label, pathname }) => {
-        const isActive =
-          pathname === "/"
-            ? currentPathname === pathname
-            : currentPathname.includes(pathname.substring(1));
+      <nav
+        className={`w-[230px] h-screen p-[38px] flex flex-col items-center gap-8 bg-white md:hidden rounded-e-lg transition-transform duration-500 ${navClass}`}
+        id="menu"
+      >
+        <img
+          className={`w-[110px] h-[24px]`}
+          src="/images/logo-menu.png"
+          alt="Vetekso Logo"
+        />
+        <div className="w-full flex flex-col gap-8">
+          {NAV_LINKS.map(({ label, pathname }) => {
+            const isActive =
+              pathname === "/"
+                ? currentPathname === pathname
+                : currentPathname.includes(pathname.substring(1));
 
-        return (
-          <a
-            key={label}
-            href={pathname}
-            className={`${isActive ? "text-fuchsia-100" : "text-white"} text-xl transition-colors duration-200 hover:text-fuchsia-100`}
-          >
-            {label}
-          </a>
-        );
-      })}
-    </div>
+            return (
+              <a
+                key={label}
+                href={pathname}
+                className={`${isActive ? "text-fuchsia-100" : "text-blue-500"} text-xl transition-colors duration-200 hover:text-fuchsia-100`}
+              >
+                {label}
+              </a>
+            );
+          })}
+        </div>
+      </nav>
+    </aside>
   );
 };
 

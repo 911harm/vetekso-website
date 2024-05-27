@@ -1,8 +1,8 @@
 ---
-import Logo from "../client/Logo";
 import ToggleMenu from "../client/ToggleMenu";
 import NavLinks from "../client/NavLinks";
 import NavMenu from "../client/NavMenu";
+import Image from "astro/components/Image.astro";
 ---
 
 <header
@@ -11,9 +11,16 @@ import NavMenu from "../client/NavMenu";
   <nav
     class="h-[100px] max-w-6xl mx-auto px-6 sm:px-12 flex justify-between items-center"
   >
-    <Logo client:load />
+    <Image
+      class="max-[500px]:max-h-[24px] max-[500px]:max-w-[110px]"
+      src="/images/logo.png"
+      width="170"
+      height="35"
+      loading="eager"
+      alt="Vetekso Logo"
+    />
     <ToggleMenu client:load />
     <NavLinks client:load currentPathname={Astro.url.pathname} />
-    <NavMenu client:load currentPathname={Astro.url.pathname} />
   </nav>
+  <NavMenu client:load currentPathname={Astro.url.pathname} />
 </header>

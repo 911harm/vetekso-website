@@ -14,6 +14,7 @@ export default {
         },
         translucent: "#D9D9D94D",
         shadow: "#00000033",
+        "shadow-2": "#00000080",
       },
       backgroundImage: {
         "custom-gradient": "linear-gradient(90deg, #aebcff 0%, #ffd5f7 100%)",

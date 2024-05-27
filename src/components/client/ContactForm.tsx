@@ -2,6 +2,7 @@ import { useState, type ChangeEvent, type FormEvent } from "react";
 import Checkbox from "./Checkbox";
 import { INPUT_PROPS } from "../../utils/consts";
 import { validateForm } from "../../utils/validations";
+import { formatInputPhone } from "../../utils/formatInput";
 
 interface FormState {
   name: string;
@@ -39,9 +40,11 @@ const ContactForm = () => {
         [name]: checked,
       });
     } else {
+      const finalValue = name === "phone" ? formatInputPhone(value) : value;
+
       setForm({
         ...form,
-        [name]: value,
+        [name]: finalValue,
       });
     }
   };

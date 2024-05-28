@@ -13,7 +13,7 @@ const { title, pageId } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" id={pageId} transition:animate="initial">
+<html lang="en" id={pageId}>
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
@@ -42,15 +42,18 @@ const { title, pageId } = Astro.props;
         background: linear-gradient(141.19deg, #00105b 13.59%, #841b71 86.5%);
         color: #ffffff;
       }
+
       main {
         min-height: 100vh;
         margin-top: 100px;
       }
 
-      #planes footer,
-      #servicios footer,
-      #contacto footer {
-        background: #d9d9d94d;
+      #planes,
+      #servicios,
+      #contacto {
+        footer {
+          background: #d9d9d94d;
+        }
       }
 
       h1 {
@@ -110,6 +113,41 @@ const { title, pageId } = Astro.props;
         }
       }
 
+      #markdown {
+        body {
+          color: #000000;
+
+          h1 {
+            font-weight: 600;
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 20px;
+            background-image: linear-gradient(90deg, #841b71 0%, #00105b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+          h2 {
+            font-weight: 700;
+            font-size: 16px;
+          }
+
+          p > a {
+            font-size: 16px;
+            font-weight: 600;
+          }
+
+          ul li::before {
+            content: "• ";
+          }
+
+          p,
+          ul {
+            margin-bottom: 16px;
+          }
+        }
+      }
+
+      // *************** Input checkbox ***************
       input[type="checkbox"] {
         display: none;
       }

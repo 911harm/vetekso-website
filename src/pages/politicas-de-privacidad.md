@@ -1,6 +1,7 @@
 ---
 layout: ../layouts/MarkdownLayout.astro
 title: Políticas de Privacidad - VETEK SO
+pageId: markdown
 ---
 
 # Autorización de Políticas de Privacidad

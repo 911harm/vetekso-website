@@ -1,6 +1,7 @@
 ---
 layout: ../layouts/MarkdownLayout.astro
 title: Políticas de Tratamiento de Datos - VETEK SO
+pageId: markdown
 ---
 
 # Autorización de Tratamiento de Datos Personales

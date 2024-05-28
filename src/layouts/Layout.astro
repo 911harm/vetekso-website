@@ -2,6 +2,7 @@
 import Header from "../components/shared/Header.astro";
 import Footer from "../components/shared/Footer.astro";
 import "@fontsource-variable/podkova";
+import { ViewTransitions } from "astro:transitions";
 
 interface Props {
   title: string;
@@ -12,7 +13,7 @@ const { title, pageId } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" id={pageId}>
+<html lang="en" id={pageId} transition:animate="initial">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
@@ -20,6 +21,7 @@ const { title, pageId } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <ViewTransitions />
   </head>
   <body>
     <Header />
@@ -27,134 +29,133 @@ const { title, pageId } = Astro.props;
       <slot />
     </main>
     <Footer />
+    <style is:global lang="scss">
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        min-height: 100vh;
+        font-family: "Podkova Variable", system-ui, sans-serif;
+        background: linear-gradient(141.19deg, #00105b 13.59%, #841b71 86.5%);
+        color: #ffffff;
+      }
+      main {
+        min-height: 100vh;
+        margin-top: 100px;
+      }
+
+      #planes footer,
+      #servicios footer,
+      #contacto footer {
+        background: #d9d9d94d;
+      }
+
+      h1 {
+        font-weight: 600;
+        font-size: 48px;
+        text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
+
+        @media (min-width: 768px) {
+          font-size: 58px;
+        }
+
+        @media (min-width: 1200px) {
+          font-size: 64px;
+          line-height: 80px;
+        }
+      }
+
+      h2 {
+        font-size: 24px;
+
+        @media (min-width: 400px) {
+          font-size: 32px;
+        }
+
+        @media (min-width: 768px) {
+          font-size: 40px;
+        }
+      }
+
+      h3 {
+        font-size: 20px;
+
+        @media (min-width: 400px) {
+          font-size: 26px;
+        }
+
+        @media (min-width: 768px) {
+          font-size: 32px;
+        }
+      }
+
+      h4 {
+        font-size: 16px;
+
+        @media (min-width: 400px) {
+          font-size: 20px;
+        }
+
+        @media (min-width: 768px) {
+          font-size: 24px;
+        }
+      }
+
+      a {
+        @media (min-width: 400px) {
+          font-size: 20px;
+        }
+      }
+
+      input[type="checkbox"] {
+        display: none;
+      }
+
+      .checkbox-container {
+        display: inline-block;
+        position: relative;
+        padding-left: 25px;
+        cursor: pointer;
+        user-select: none;
+        font-size: 18px;
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 20px;
+          height: 20px;
+          border: 2px solid #000;
+          border-radius: 4px;
+          background-color: #fff;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 5px;
+          top: 2px;
+          width: 8px;
+          height: 14px;
+          border: solid #fff;
+          border-width: 0 2px 2px 0;
+          transform: rotate(45deg);
+          opacity: 0;
+          transition: opacity 0.2s;
+        }
+
+        input[type="checkbox"]:checked + .checkbox-container::before {
+          background-color: #000;
+        }
+
+        input[type="checkbox"]:checked + .checkbox-container::after {
+          opacity: 1;
+        }
+      }
+    </style>
   </body>
 </html>
-
-<style is:global lang="scss">
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  html,
-  body {
-    min-height: 100vh;
-    font-family: "Podkova Variable", system-ui, sans-serif;
-    background: linear-gradient(141.19deg, #00105b 13.59%, #841b71 86.5%);
-    color: #ffffff;
-  }
-  main {
-    min-height: 100vh;
-    margin-top: 100px;
-  }
-
-  #planes footer,
-  #servicios footer,
-  #contacto footer {
-    background: #d9d9d94d;
-  }
-
-  h1 {
-    font-weight: 600;
-    font-size: 48px;
-    text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
-
-    @media (min-width: 768px) {
-      font-size: 58px;
-    }
-
-    @media (min-width: 1200px) {
-      font-size: 64px;
-      line-height: 80px;
-    }
-  }
-
-  h2 {
-    font-size: 24px;
-
-    @media (min-width: 400px) {
-      font-size: 32px;
-    }
-
-    @media (min-width: 768px) {
-      font-size: 40px;
-    }
-  }
-
-  h3 {
-    font-size: 20px;
-
-    @media (min-width: 400px) {
-      font-size: 26px;
-    }
-
-    @media (min-width: 768px) {
-      font-size: 32px;
-    }
-  }
-
-  h4 {
-    font-size: 16px;
-
-    @media (min-width: 400px) {
-      font-size: 20px;
-    }
-
-    @media (min-width: 768px) {
-      font-size: 24px;
-    }
-  }
-
-  a {
-    @media (min-width: 400px) {
-      font-size: 20px;
-    }
-  }
-
-  input[type="checkbox"] {
-    display: none;
-  }
-
-  .checkbox-container {
-    display: inline-block;
-    position: relative;
-    padding-left: 25px;
-    cursor: pointer;
-    user-select: none;
-    font-size: 18px;
-
-    &::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 20px;
-      height: 20px;
-      border: 2px solid #000;
-      border-radius: 4px;
-      background-color: #fff;
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      left: 5px;
-      top: 2px;
-      width: 8px;
-      height: 14px;
-      border: solid #fff;
-      border-width: 0 2px 2px 0;
-      transform: rotate(45deg);
-      opacity: 0;
-      transition: opacity 0.2s;
-    }
-
-    input[type="checkbox"]:checked + .checkbox-container::before {
-      background-color: #000;
-    }
-
-    input[type="checkbox"]:checked + .checkbox-container::after {
-      opacity: 1;
-    }
-  }
-</style>

@@ -5,14 +5,15 @@ import Layout from "./Layout.astro";
 interface Props {
   frontmatter: {
     title: string;
+    description: string;
     pageId: string;
   };
 }
 
-const { title, pageId } = Astro.props.frontmatter;
+const { title, description, pageId } = Astro.props.frontmatter;
 ---
 
-<Layout title={title} pageId={pageId}>
+<Layout title={title} description={description} pageId={pageId}>
   <section class="bg-white">
     <div class="mdContainer max-w-6xl px-6 sm:px-12 py-10 m-auto">
       <slot />

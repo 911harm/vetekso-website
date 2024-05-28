@@ -6,17 +6,18 @@ import { ViewTransitions } from "astro:transitions";
 
 interface Props {
   title: string;
+  description: string;
   pageId?: string;
 }
 
-const { title, pageId } = Astro.props;
+const { title, description, pageId } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en" id={pageId}>
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />

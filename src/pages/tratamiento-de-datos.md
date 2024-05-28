@@ -1,6 +1,7 @@
 ---
 layout: ../layouts/MarkdownLayout.astro
 title: Políticas de Tratamiento de Datos - VETEK SO
+description: Lee nuestras Políticas de Tratamiento de Datos Personales para entender cómo recopilamos, utilizamos y protegemos tu información personal. Conoce tus derechos y nuestras prácticas operativas para garantizar la seguridad y correcta gestión de tus datos
 pageId: markdown
 ---
 

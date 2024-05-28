@@ -1,6 +1,7 @@
 ---
 layout: ../layouts/MarkdownLayout.astro
 title: Políticas de Privacidad - VETEK SO
+description: Consulta nuestras Políticas de Privacidad para obtener información sobre cómo manejamos y protegemos tu información personal. Nos comprometemos a garantizar la confidencialidad y seguridad de tus datos
 pageId: markdown
 ---
 

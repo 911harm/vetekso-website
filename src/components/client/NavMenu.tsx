@@ -6,12 +6,19 @@ const NavMenu = ({ currentPathname }: { currentPathname: string }) => {
   const $isMenuOpen = useStore(isMenuOpen);
   const asideClass = $isMenuOpen
     ? "h-screen w-screen bg-shadow-2 z-40"
-    : "bg-transparent z-[-1]";
+    : "w-0 bg-transparent z-[-1]";
   const navClass = $isMenuOpen ? "" : "-translate-x-full";
+
+  const handleCloseMenu = (e: React.MouseEvent) => {
+    if (e.target === e.currentTarget) {
+      isMenuOpen.set(false);
+    }
+  };
 
   return (
     <aside
-      className={`absolute top-0 start-0 transition-background duration-100 ${asideClass}`}
+      className={`absolute top-0 start-0 transition-background delay-100 ${asideClass}`}
+      onClick={handleCloseMenu}
     >
       <nav
         className={`w-[230px] h-screen p-[38px] flex flex-col items-center gap-8 bg-white md:hidden rounded-e-lg transition-transform duration-500 ${navClass}`}

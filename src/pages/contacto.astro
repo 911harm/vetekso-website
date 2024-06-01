@@ -9,21 +9,25 @@ import Layout from "../layouts/Layout.astro";
   pageId="contacto"
 >
   <section
-    class="min-h-screen max-w-6xl px-6 sm:px-12 py-10 m-auto flex flex-col lg:flex-row-reverse justify-center items-center gap-8"
+    class="min-h-screen px-6 sm:px-12 py-10 m-auto flex flex-col lg:flex-row-reverse justify-center items-center gap-8"
   >
-    <div class="lg:w-1/2 flex flex-col gap-8 lg:mb-32">
+    <div class="lg:w-7/12 flex flex-col gap-8">
       <h1
-        class="min-[400px]:w-4/5 min-[600px]:max-lg:text-center lg:w-full min-[1100px]:w-[85%] m-auto text-balance"
+        class="min-[400px]:w-4/5 min-[600px]:max-lg:text-center lg:w-full min-[1100px]:w-[85%] m-auto text-balance text-center px-7 text-5xl lg:text-[64px]"
       >
-        Tu próximo paso hacia el crecimiento.
+        Tu próximo paso hacia el crecimiento
       </h1>
       <p class="text-lg md:max-[850px]:text-base lg:text-2xl">
         ¿Listo para elevar tu negocio al siguiente nivel? En nuestro equipo,
         estamos listos para ayudarte a alcanzar tus metas. ¡Hablemos hoy mismo y
         descubre cómo podemos colaborar para hacer realidad tus proyectos!
       </p>
+      <!-- Principio del widget integrado de Calendly -->
+<div class="calendly-inline-widget" data-url="https://calendly.com/info-lptw/30min?primary_color=841b71" style="min-width:320px;height:800px;"></div>
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<!-- Final del widget integrado de Calendly -->
     </div>
-    <ContactForm client:load />
+     <!-- <ContactForm client:load />  -->
   </section>
 </Layout>
 

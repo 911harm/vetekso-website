@@ -5,7 +5,7 @@ import { isMenuOpen } from "../../store";
 const NavMenu = ({ currentPathname }: { currentPathname: string }) => {
   const $isMenuOpen = useStore(isMenuOpen);
   const asideClass = $isMenuOpen
-    ? "h-screen w-screen bg-shadow-2 z-40"
+    ? "h-screen w-screen bg-translucent z-40"
     : "w-0 bg-transparent z-[-1]";
   const navClass = $isMenuOpen ? "" : "-translate-x-full";
 
@@ -24,11 +24,13 @@ const NavMenu = ({ currentPathname }: { currentPathname: string }) => {
         className={`w-[230px] h-screen p-[38px] flex flex-col items-center gap-8 bg-white md:hidden rounded-e-lg transition-transform duration-500 ${navClass}`}
         id="menu"
       >
+        <a href="/">
         <img
           className={`w-[110px] h-[24px]`}
-          src="/images/logo-menu.png"
+          src="/images/logo-menu-mobile.svg"
           alt="Vetekso Logo"
         />
+        </a>
         <div className="w-full flex flex-col gap-8">
           {NAV_LINKS.map(({ label, pathname }) => {
             const isActive =

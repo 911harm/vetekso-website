@@ -12,14 +12,16 @@ import Image from "astro/components/Image.astro";
   <nav
     class="h-[100px] max-w-6xl mx-auto px-6 sm:px-12 flex justify-between items-center"
   >
+  <a href="/">
     <Image
       class="max-[500px]:max-h-[24px] max-[500px]:max-w-[110px]"
-      src="/images/logo.png"
+      src="/images/logo-main.svg"
       width="170"
       height="35"
       loading="eager"
       alt="Vetekso Logo"
     />
+  </a>
     <ToggleMenu client:load />
     <NavLinks client:load currentPathname={Astro.url.pathname} />
   </nav>

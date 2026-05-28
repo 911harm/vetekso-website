@@ -8,7 +8,7 @@ const IconButton = () => {
 
   return (
     <button
-      className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden"
+      className="inline-flex items-center p-2 w-10 h-10 justify-center text-white/85 hover:text-white rounded-xl hover:bg-white/5 transition-colors duration-200 md:hidden"
       data-collapse-toggle="navbar-default"
       type="button"
       aria-controls="navbar-default"

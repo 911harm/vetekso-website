@@ -14,184 +14,231 @@ const { title, description, pageId } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" id={pageId}>
+<html lang="es" class="scroll-smooth" id={pageId}>
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <ViewTransitions />
   </head>
-  <body>
-    <Header />
-    <main>
-      <slot />
-    </main>
-    <Footer />
+  <body class="bg-space-900 text-white font-sans antialiased selection:bg-fuchsia-500/30 selection:text-fuchsia-200 overflow-x-hidden min-h-screen relative flex flex-col">
+    <!-- Orbes decorativos del fondo -->
+    <div class="fixed top-[-10%] left-[-10%] w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] rounded-full bg-blue-500/10 blur-[120px] pointer-events-none animate-pulse-glow z-0"></div>
+    <div class="fixed bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] rounded-full bg-fuchsia-500/10 blur-[150px] pointer-events-none animate-pulse-glow z-0" style="animation-delay: -3s;"></div>
+    <div class="fixed top-[35%] left-[55%] w-[35vw] h-[35vw] max-w-[400px] max-h-[400px] rounded-full bg-cyan-500/5 blur-[100px] pointer-events-none animate-pulse-glow z-0" style="animation-delay: -1.5s;"></div>
+
+    <div class="relative z-10 flex flex-col min-h-screen w-full">
+      <Header />
+      <main class="flex-grow pt-[100px]">
+        <slot />
+      </main>
+      <Footer />
+    </div>
+
     <style is:global lang="scss">
       * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
       }
-      html,
+
       body {
-        min-height: 100vh;
-        font-family: "Podkova Variable", system-ui, sans-serif;
-        background: linear-gradient(141.19deg, #00105b 13.59%, #841b71 86.5%);
-        color: #ffffff;
+        background-color: #030014;
       }
 
-      main {
-        min-height: 100vh;
-        margin-top: 100px;
-      }
-
-      #planes,
-      #servicios,
-      #contacto {
-        footer {
-          background: #d9d9d94d;
-        }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: "Podkova Variable", Georgia, serif;
+        font-weight: 700;
+        letter-spacing: -0.02em;
       }
 
       h1 {
-        font-weight: 600;
-        font-size: 48px;
-        text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
+        font-size: 40px;
+        line-height: 1.1;
+        text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
 
         @media (min-width: 768px) {
-          font-size: 58px;
+          font-size: 56px;
         }
 
         @media (min-width: 1200px) {
-          font-size: 64px;
-          line-height: 80px;
+          font-size: 72px;
         }
       }
 
       h2 {
-        font-size: 24px;
-
-        @media (min-width: 400px) {
-          font-size: 32px;
-        }
+        font-size: 28px;
+        line-height: 1.2;
 
         @media (min-width: 768px) {
-          font-size: 40px;
+          font-size: 38px;
+        }
+
+        @media (min-width: 1200px) {
+          font-size: 48px;
         }
       }
 
       h3 {
-        font-size: 20px;
-
-        @media (min-width: 400px) {
-          font-size: 26px;
-        }
+        font-size: 22px;
 
         @media (min-width: 768px) {
-          font-size: 32px;
+          font-size: 28px;
         }
       }
 
-      h4 {
-        font-size: 16px;
-
-        @media (min-width: 400px) {
-          font-size: 20px;
-        }
-
-        @media (min-width: 768px) {
-          font-size: 24px;
-        }
+      p {
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.8);
       }
 
       a {
-        @media (min-width: 400px) {
-          font-size: 20px;
-        }
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
       }
 
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #030014;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+        border: 2px solid #030014;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      // Estilos específicos para la renderización de Markdown
       #markdown {
-        body {
-          color: #000000;
+        background-color: #ffffff;
+        color: #1f2937;
 
-          h1 {
-            font-weight: 600;
-            font-size: 32px;
-            text-align: center;
-            margin-bottom: 20px;
-            background-image: linear-gradient(90deg, #841b71 0%, #00105b 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-          }
-          h2 {
-            font-weight: 700;
-            font-size: 16px;
-          }
+        h1, h2, h3, h4 {
+          font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+          color: #111827;
+          letter-spacing: -0.01em;
+          text-shadow: none;
+        }
 
-          p > a {
-            font-size: 16px;
-            font-weight: 600;
-          }
+        h1 {
+          font-size: 32px;
+          font-weight: 800;
+          text-align: center;
+          margin-bottom: 24px;
+          background: linear-gradient(90deg, #841b71 0%, #00105b 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
 
-          ul li::before {
-            content: "• ";
-          }
+        h2 {
+          font-size: 20px;
+          font-weight: 700;
+          margin-top: 32px;
+          margin-bottom: 16px;
+          border-bottom: 1px solid #e5e7eb;
+          padding-bottom: 8px;
+        }
 
-          p,
-          ul {
-            margin-bottom: 16px;
+        p, ul, ol {
+          margin-bottom: 18px;
+          font-size: 16px;
+          color: #374151;
+        }
+
+        ul {
+          list-style-type: none;
+          padding-left: 8px;
+          li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            &::before {
+              content: "•";
+              color: #841b71;
+              font-weight: bold;
+              position: absolute;
+              left: 0;
+            }
+          }
+        }
+
+        a {
+          color: #841b71;
+          font-weight: 600;
+          &:hover {
+            color: #00105b;
+            text-decoration: underline;
           }
         }
       }
 
-      // *************** Input checkbox ***************
+      /* Estilo alternativo de checkbox para el formulario */
       input[type="checkbox"] {
         display: none;
       }
 
       .checkbox-container {
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
         position: relative;
-        padding-left: 25px;
         cursor: pointer;
         user-select: none;
-        font-size: 18px;
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.7);
 
         &::before {
           content: "";
-          position: absolute;
-          left: 0;
-          top: 0;
-          width: 20px;
-          height: 20px;
-          border: 2px solid #000;
+          display: inline-block;
+          width: 18px;
+          height: 18px;
+          border: 1.5px solid rgba(255, 255, 255, 0.2);
           border-radius: 4px;
-          background-color: #fff;
+          background-color: rgba(255, 255, 255, 0.03);
+          transition: all 0.2s ease;
         }
 
         &::after {
           content: "";
           position: absolute;
-          left: 5px;
-          top: 2px;
-          width: 8px;
-          height: 14px;
-          border: solid #fff;
+          left: 6px;
+          top: 3px;
+          width: 5px;
+          height: 10px;
+          border: solid white;
           border-width: 0 2px 2px 0;
           transform: rotate(45deg);
           opacity: 0;
-          transition: opacity 0.2s;
+          transition: opacity 0.2s ease;
         }
 
-        input[type="checkbox"]:checked + .checkbox-container::before {
-          background-color: #000;
+        &:hover::before {
+          border-color: rgba(255, 255, 255, 0.4);
+          background-color: rgba(255, 255, 255, 0.07);
+        }
+      }
+
+      input[type="checkbox"]:checked + .checkbox-container {
+        color: white;
+
+        &::before {
+          background-color: #841b71;
+          border-color: #841b71;
         }
 
-        input[type="checkbox"]:checked + .checkbox-container::after {
+        &::after {
           opacity: 1;
         }
       }

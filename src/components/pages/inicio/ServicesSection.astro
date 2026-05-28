@@ -1,101 +1,122 @@
 ---
-import Image from "astro/components/Image.astro";
 import ButtonLink from "../../shared/ButtonLink.astro";
-
-const SERVICES = [
-  {
-    img: "web-assessment.png",
-    label: "Asesoría Web e Investigación",
-  },
-  {
-    img: "redesign.png",
-    label: "Diseño y Re-Diseño Web",
-  },
-  {
-    img: "customization.png",
-    label: "Customización y Desarrollo",
-  },
-  {
-    img: "seo.png",
-    label: "Posicionamiento SEO",
-  },
-  {
-    img: "back.png",
-    label: "Back Office",
-  },
-  {
-    img: "support.png",
-    label: "Soporte Técnico",
-  },
-];
 ---
 
-<section class="flex flex-col bg-translucent">
-  <div class="w-full max-w-6xl px-6 sm:px-12 py-10 m-auto">
-    <h2 class="mb-6 text-center font-semibold">
-      ¿Qué servicio necesitas en tu negocio?
-    </h2>
-    <div class="gridContainer grid gap-10 md:gap-16 justify-around">
-      {
-        SERVICES.map((item) => (
-          <figure class="w-full mx-auto flex flex-col items-center">
-            <Image
-              class="m-auto mb-2"
-              src={`/icons/${item.img}`}
-              width="180"
-              height="180"
-              loading="lazy"
-              alt={`Imágen de ${item.label}`}
-            />
-            <div
-              class={`
-              h-[50px] md:h-[75px] w-full md:min-w-[180px] px-2
-              flex justify-center items-center text-center
-              bg-custom-gradient text-blue-500 text-xs md:text-base font-semibold rounded-md
-              hover:text-blue-100 hover:border-2 hover:border-blue-100 hover:bg-none hover:shadow
-              cursor-default
-              `}
-            >
-              {item.label}
-            </div>
-          </figure>
-        ))
-      }
+<section class="relative py-20 lg:py-28 border-b border-white/5 bg-space-950/20">
+  <div class="w-full max-w-6xl px-6 sm:px-10 mx-auto">
+    <!-- Encabezado de la Sección -->
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="text-xs font-extrabold uppercase tracking-widest text-cyan-400">Soluciones de Extremo a Extremo</span>
+      <h2 class="font-extrabold text-white mt-2 mb-4 leading-tight">
+        ¿Qué servicio necesita tu negocio?
+      </h2>
+      <p class="text-lg text-white/60 leading-relaxed font-light">
+        Ofrecemos un ecosistema de servicios digitales premium enfocados en la velocidad, confiabilidad y diseño excepcional.
+      </p>
     </div>
-    <ButtonLink
-      href="/planes"
-      label="Nuestros Planes"
-      btnClasses="mx-auto mt-14 bg-custom-gradient-2 hover:bg-none hover:bg-shadow text-white hover:border-white hover:border-[3px]"
-    />
+
+    <!-- Grilla de Servicios -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      
+      <!-- Servicio 1: Asesoría Web -->
+      <article class="group rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 p-8 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-6 text-blue-400 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Asesoría Web e Investigación</h3>
+          <p class="text-sm text-white/65 leading-relaxed font-light">
+            Analizamos tu mercado, tu competencia y tu infraestructura actual para diseñar la estrategia tecnológica perfecta adaptada a tus objetivos.
+          </p>
+        </div>
+      </article>
+
+      <!-- Servicio 2: Diseño y Re-Diseño Web -->
+      <article class="group rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 p-8 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-fuchsia-500/10 border border-fuchsia-500/20 flex items-center justify-center mb-6 text-fuchsia-400 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Diseño y Re-Diseño Web</h3>
+          <p class="text-sm text-white/65 leading-relaxed font-light">
+            Creamos interfaces estéticas, intuitivas y responsivas que enamoran a primera vista y optimizan la conversión de tus visitantes en clientes.
+          </p>
+        </div>
+      </article>
+
+      <!-- Servicio 3: Customización y Desarrollo -->
+      <article class="group rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 p-8 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mb-6 text-cyan-400 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Customización y Desarrollo</h3>
+          <p class="text-sm text-white/65 leading-relaxed font-light">
+            Programamos código robusto, escalable y adaptado a tus necesidades específicas. Desarrollamos funcionalidades a medida sin limitaciones.
+          </p>
+        </div>
+      </article>
+
+      <!-- Servicio 4: Posicionamiento SEO -->
+      <article class="group rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 p-8 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-6 text-blue-400 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Posicionamiento SEO</h3>
+          <p class="text-sm text-white/65 leading-relaxed font-light">
+            Estructuramos técnicamente tu web y optimizamos el rendimiento de carga para conseguir que tu negocio destaque en las búsquedas de Google.
+          </p>
+        </div>
+      </article>
+
+      <!-- Servicio 5: Back Office -->
+      <article class="group rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 p-8 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-fuchsia-500/10 border border-fuchsia-500/20 flex items-center justify-center mb-6 text-fuchsia-400 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Back Office</h3>
+          <p class="text-sm text-white/65 leading-relaxed font-light">
+            Simplificamos y administramos tus sistemas de gestión interna, bases de datos y flujos operativos para mantener tu plataforma al día.
+          </p>
+        </div>
+      </article>
+
+      <!-- Servicio 6: Soporte Técnico -->
+      <article class="group rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 p-8 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mb-6 text-cyan-400 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Soporte Técnico</h3>
+          <p class="text-sm text-white/65 leading-relaxed font-light">
+            Monitoreo constante y mantenimiento preventivo para solventar cualquier eventualidad técnica de inmediato, garantizando estabilidad absoluta.
+          </p>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Botón hacia planes -->
+    <div class="mt-16 flex justify-center">
+      <ButtonLink
+        href="/planes"
+        label="Nuestros Planes"
+        btnClasses="bg-gradient-to-r from-blue-500 via-fuchsia-500 to-cyan-500 hover:from-blue-600 hover:via-fuchsia-600 hover:to-cyan-600 text-white rounded-xl shadow-lg hover:-translate-y-0.5 hover:scale-102 active:scale-95 duration-300 transition-all font-semibold"
+      />
+    </div>
   </div>
 </section>
-
-<style lang="scss">
-  .gridContainer {
-    grid-template-columns: repeat(auto-fill, 100px);
-
-    @media (min-width: 430px) {
-      justify-content: space-between;
-    }
-
-    @media (min-width: 480px) {
-      grid-template-columns: repeat(3, 120px);
-    }
-
-    @media (min-width: 620px) {
-      grid-template-columns: repeat(3, 140px);
-    }
-
-    @media (min-width: 768px) {
-      grid-template-columns: repeat(3, 170px);
-    }
-
-    @media (min-width: 1024px) {
-      justify-content: space-around;
-    }
-
-    @media (min-width: 1440px) {
-      justify-content: space-between;
-    }
-  }
-</style>

@@ -6,18 +6,18 @@ import Image from "astro/components/Image.astro";
 ---
 
 <header
-  class="bg-blue-500 fixed top-0 left-0 w-full z-50 shadow-[4px_0px_10px_0px_rgba(0,0,0,0.25)]"
+  class="fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-6xl z-50 rounded-2xl border border-white/10 backdrop-blur-xl shadow-xl shadow-black/40 header-capsule"
   transition:animate="none"
 >
   <nav
-    class="h-[100px] max-w-6xl mx-auto px-6 sm:px-12 flex justify-between items-center"
+    class="h-[80px] max-w-6xl mx-auto px-6 sm:px-10 flex justify-between items-center"
   >
-  <a href="/">
+  <a href="/" class="flex items-center gap-2 hover:opacity-90">
     <Image
       class="max-[500px]:max-h-[24px] max-[500px]:max-w-[110px]"
       src="/images/logo-main.svg"
-      width="170"
-      height="35"
+      width="150"
+      height="30"
       loading="eager"
       alt="Vetekso Logo"
     />
@@ -27,3 +27,14 @@ import Image from "astro/components/Image.astro";
   </nav>
   <NavMenu client:load currentPathname={Astro.url.pathname} />
 </header>
+
+<style>
+  .header-capsule {
+    background-color: #030014 !important;
+  }
+  @media (min-width: 768px) {
+    .header-capsule {
+      background-color: rgba(3, 0, 20, 0.85) !important;
+    }
+  }
+</style>

@@ -5,8 +5,8 @@ import { isMenuOpen } from "../../store";
 const NavMenu = ({ currentPathname }: { currentPathname: string }) => {
   const $isMenuOpen = useStore(isMenuOpen);
   const asideClass = $isMenuOpen
-    ? "h-screen w-screen bg-translucent z-40"
-    : "w-0 bg-transparent z-[-1]";
+    ? "h-screen w-screen bg-black/60 backdrop-blur-sm z-40"
+    : "w-0 bg-transparent z-[-1] pointer-events-none";
   const navClass = $isMenuOpen ? "" : "-translate-x-full";
 
   const handleCloseMenu = (e: React.MouseEvent) => {
@@ -17,21 +17,21 @@ const NavMenu = ({ currentPathname }: { currentPathname: string }) => {
 
   return (
     <aside
-      className={`absolute top-0 start-0 transition-background delay-100 ${asideClass}`}
+      className={`fixed inset-0 transition-all duration-300 ${asideClass}`}
       onClick={handleCloseMenu}
     >
       <nav
-        className={`w-[230px] h-screen p-[38px] flex flex-col items-center gap-8 bg-white md:hidden rounded-e-lg transition-transform duration-500 ${navClass}`}
+        className={`w-[260px] h-screen p-[38px] flex flex-col items-center gap-10 bg-[#030014]/95 border-r border-white/10 backdrop-blur-2xl md:hidden rounded-e-2xl transition-transform duration-500 shadow-2xl ${navClass}`}
         id="menu"
       >
-        <a href="/">
+        <a href="/" onClick={() => isMenuOpen.set(false)}>
         <img
-          className={`w-[110px] h-[24px]`}
-          src="/images/logo-menu-mobile.svg"
+          className={`w-[130px]`}
+          src="/images/logo-main.svg"
           alt="Vetekso Logo"
         />
         </a>
-        <div className="w-full flex flex-col gap-8">
+        <div className="w-full flex flex-col gap-6">
           {NAV_LINKS.map(({ label, pathname }) => {
             const isActive =
               pathname === "/"
@@ -42,7 +42,8 @@ const NavMenu = ({ currentPathname }: { currentPathname: string }) => {
               <a
                 key={label}
                 href={pathname}
-                className={`${isActive ? "text-fuchsia-100" : "text-blue-500"} text-xl transition-colors duration-200 hover:text-fuchsia-100`}
+                onClick={() => isMenuOpen.set(false)}
+                className={`${isActive ? "text-fuchsia-400 font-semibold" : "text-white/80"} text-lg py-2 border-b border-white/5 w-full text-center transition-colors duration-200 hover:text-fuchsia-400`}
               >
                 {label}
               </a>

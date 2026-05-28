@@ -16,9 +16,12 @@ const NavLinks = ({ currentPathname }: { currentPathname: string }) => {
           <a
             key={`NavLink-${label}`}
             href={pathname}
-            className={`${isActive ? "text-fuchsia-100" : "text-white"} text-xl transition-colors duration-200 hover:text-fuchsia-100`}
+            className={`${isActive ? "text-fuchsia-400 font-semibold" : "text-white/80 hover:text-white"} text-base font-medium transition-all duration-300 relative py-1 px-2`}
           >
             {label}
+            {isActive && (
+              <span className="absolute bottom-0 left-2 right-2 h-[2px] bg-gradient-to-r from-fuchsia-400 to-cyan-400 rounded-full animate-pulse" />
+            )}
           </a>
         );
       })}

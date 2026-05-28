@@ -4,15 +4,22 @@ import PlanCard from "../../shared/PlanCard.astro";
 ---
 
 <section
-  class="max-w-6xl px-6 sm:px-12 py-10 m-auto flex flex-col justify-center items-center"
+  class="relative max-w-6xl px-6 sm:px-10 py-20 lg:py-28 mx-auto flex flex-col justify-center items-center"
 >
-  <h2 class="font-extrabold text-center">Explora Nuestros Planes</h2>
-  <p class="mb-10 md:text-2xl text-center font-semibold">
-    Elige el plan ideal para las necesidades de tu negocio
-  </p>
-  <div class="w-full justify-around hidden min-[900px]:flex">
+  <div class="text-center max-w-2xl mx-auto mb-16">
+    <span class="text-xs font-extrabold uppercase tracking-widest text-fuchsia-400">Precios Transparentes</span>
+    <h2 class="font-extrabold text-white mt-2 mb-4 leading-tight">Explora Nuestros Planes</h2>
+    <p class="text-lg text-white/60 leading-relaxed font-light">
+      Elige el modelo ideal para potenciar las metas de tu negocio. Pausa o cancela cuando quieras.
+    </p>
+  </div>
+
+  <!-- Vista en Rejilla para pantallas grandes -->
+  <div class="w-full max-w-[800px] justify-center gap-8 hidden min-[900px]:grid grid-cols-2 items-stretch">
     <PlanCard plan="Estándar" />
     <PlanCard plan="Pro" />
   </div>
+
+  <!-- Vista Carrusel en pantallas pequeñas -->
   <Carousel />
 </section>

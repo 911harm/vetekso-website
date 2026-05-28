@@ -1,87 +1,36 @@
----
-import { Image } from "astro:assets";
----
+<section class="relative py-20 border-y border-white/5 bg-space-950/40 overflow-hidden">
+  <!-- Fondo decorativo con rejilla de puntos -->
+  <div class="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.015)_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none"></div>
+  <div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-fuchsia-500/5 rounded-full blur-[100px] pointer-events-none"></div>
 
-<section class="flex flex-col bg-translucent">
-  <Image
-    class="hidden md:block md:pe-6"
-    src="/images/lines.png"
-    width="700"
-    height="450"
-    loading="eager"
-    alt="Imagen de fondo"
-  />
-  <div
-    class="max-w-6xl h-full md:px-12 pb-8 md:pb-0 m-auto md:flex md:items-stretch md:flex-row md:gap-6 justify-center items-center"
-  >
-    <div class="title flex-1">
-      <h1 class="min-[500px]:max-md:text-6xl font-semibold text-balance">
-        Gocemos colaborando en conjunto
-      </h1>
-      <Image
-        class="block md:hidden"
-        src="/images/lines.png"
-        width="700"
-        height="450"
-        loading="eager"
-        alt="Imagen de fondo"
-      />
+  <div class="relative z-10 max-w-6xl mx-auto px-6 sm:px-10 flex flex-col md:flex-row gap-12 items-center justify-between">
+    <!-- Columna Izquierda: Título Principal con Énfasis -->
+    <div class="flex-1">
+      <h2 class="text-white text-balance tracking-tight leading-tight mb-2">
+        Gocemos colaborando
+      </h2>
+      <h2 class="bg-gradient-to-r from-fuchsia-400 to-blue-400 bg-clip-text text-transparent font-extrabold tracking-tight leading-tight">
+        en conjunto
+      </h2>
     </div>
 
-    <div
-      class="flex-1 px-6 sm:px-12 md:px-0 lg:py-8 flex flex-col justify-center items-center gap-4 lg:gap-8"
-    >
-      <p class="text-lg md:max-[850px]:text-base lg:text-2xl">
-        En el mundo competitivo actual, cada aspecto cuenta para mejorar tu
-        presencia en línea. Nosotros nos encargamos de resaltar tu negocio.
-        ¿Estás preparado para llevar tu empresa al siguiente nivel? Déjanos ser
-        tu aliado en este viaje hacia el éxito.
+    <!-- Columna Derecha: Texto de Valor y Mini-estadísticas -->
+    <div class="flex-1 flex flex-col gap-6">
+      <p class="text-lg text-white/70 leading-relaxed font-light">
+        En el entorno competitivo actual, cada detalle cuenta para consolidar tu marca en Internet. Nos especializamos en potenciar el valor único de tu negocio. ¿Estás listo para dar el salto tecnológico? Permítenos guiarte hacia el éxito digital con soluciones robustas y elegantes.
       </p>
+      
+      <!-- Mini Grid de Estadísticas de Confianza -->
+      <div class="grid grid-cols-2 gap-4 mt-4">
+        <div class="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-300">
+          <div class="text-2xl font-bold text-fuchsia-400 font-display">100%</div>
+          <div class="text-xs text-white/50 mt-1">Compromiso en la entrega</div>
+        </div>
+        <div class="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-300">
+          <div class="text-2xl font-bold text-cyan-400 font-display">24/7</div>
+          <div class="text-xs text-white/50 mt-1">Soporte y confiabilidad</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
-
-<style lang="scss">
-  .title {
-    position: relative;
-    img {
-      top: 0;
-      width: 100%;
-      max-width: 768px;
-      height: 100%;
-      max-height: 470px;
-    }
-
-    h1 {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-  }
-
-  @media (min-width: 768px) {
-    .title {
-      h1 {
-        position: inherit;
-      }
-    }
-
-    section {
-      position: relative;
-      min-height: 450px;
-
-      img {
-        position: absolute;
-        top: 0;
-        width: 100%;
-        height: 50%;
-
-        @media (min-width: 768px) {
-          width: 50%;
-          height: 100%;
-        }
-      }
-    }
-  }
-</style>

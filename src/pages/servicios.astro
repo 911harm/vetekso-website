@@ -5,40 +5,52 @@ import ButtonLink from "../components/shared/ButtonLink.astro";
 
 const SERVICES = [
   {
-    image: "web-assessment.jpg",
-    label: "Asesoria web e Investigación",
+    image: "/images/web-assessment.jpg",
+    label: "Asesoría Web e Investigación",
+    badge: "Estrategia",
     description:
-      "Ofrece orientación para mejorar la presencia en línea de un negocio y analiza el mercado y la competencia para diseñar estrategias personalizadas y efectivas.",
+      "Ofrecemos orientación para mejorar la presencia en línea de tu negocio. Analizamos minuciosamente el mercado y tu competencia para diseñar estrategias digitales personalizadas, efectivas y orientadas a resultados tangibles.",
+    color: "blue"
   },
   {
-    image: "redesign.jpg",
+    image: "/images/redesign.jpg",
     label: "Diseño y Re-Diseño Web",
+    badge: "Interactividad",
     description:
-      "Son esenciales para crear una experiencia en línea efectiva y atractiva que satisfaga las necesidades de los usuarios y ayude a alcanzar los objetivos comerciales u organizativos.",
+      "Creamos experiencias digitales intuitivas y memorables. Nos enfocamos en el diseño de interfaces estéticas que capten la esencia de tu marca y conviertan a los visitantes en clientes leales.",
+    color: "fuchsia"
   },
   {
-    image: "imagen desarrollo.jpg",
+    image: "/images/imagen desarrollo.jpg",
     label: "Customización y Desarrollo",
+    badge: "Soluciones",
     description:
-      "la customización web se centra en adaptar un sitio existente a las necesidades específicas, mientras que el desarrollo web implica la creación o modificación de un sitio web para agregar nuevas características o mejorar su funcionamiento. Ambos son procesos fundamentales para crear sitios web efectivos y satisfactorios para los usuarios.",
+      "Adaptamos y desarrollamos funcionalidades a medida de forma escalable. Ya sea mejorando un sitio existente o creando uno nuevo desde cero, programamos con código robusto y sin limitaciones técnicas.",
+    color: "cyan"
   },
   {
-    image: "imagen Seo.jpg",
+    image: "/images/imagen Seo.jpg",
     label: "Posicionamiento SEO",
+    badge: "Visibilidad",
     description:
-      "Implica optimizar un sitio web para mejorar su visibilidad en las búsquedas en línea, aumentando así el tráfico y la autoridad del sitio",
+      "Optimizamos tu plataforma para buscadores con las mejores prácticas técnicas. Aumentamos tu visibilidad orgánica, mejoramos el rendimiento de carga y estructuramos tu contenido para posicionarte en Google.",
+    color: "blue"
   },
   {
-    image: "back.jpg",
+    image: "/images/back.jpg",
     label: "Back Office",
+    badge: "Sistemas",
     description:
-      "Gestiona las operaciones internas de una empresa, incluyendo funciones administrativas y de apoyo como recursos humanos y contabilidad.",
+      "Gestionamos e integramos las operaciones internas de tu negocio. Desde automatización de flujos de trabajo hasta gestión de bases de datos, te ayudamos a mantener tu plataforma siempre al día.",
+    color: "fuchsia"
   },
   {
-    image: "support.jpg",
+    image: "/images/support.jpg",
     label: "Soporte Técnico",
+    badge: "Garantía",
     description:
-      "Ayuda a los usuarios a utilizar y mantener la tecnología de manera eficiente, asegurando que puedan aprovechar al máximo sus dispositivos, software y servicios digitales.",
+      "Garantizamos estabilidad y tranquilidad total. Ofrecemos monitoreo constante, mantenimiento preventivo y resolución rápida de cualquier incidencia técnica para asegurar que tu sitio esté siempre operativo.",
+    color: "cyan"
   },
 ];
 ---
@@ -48,67 +60,72 @@ const SERVICES = [
   description="Descubre nuestra gama de servicios diseñados para cubrir todas tus necesidades. Ofrecemos soluciones personalizadas que impulsan el éxito de tu negocio"
   pageId="servicios"
 >
-  <section
-    class="max-w-6xl px-6 sm:px-12 py-10 m-auto flex flex-col justify-center items-center gap-8"
-  >
-    <h2 class="font-extrabold">Nuestros Servicios</h2>
-    <div class="gridContainer w-full grid gap-10 md:gap-16 justify-around">
+  <section class="relative py-16 lg:py-24 max-w-6xl px-6 sm:px-12 mx-auto z-10 w-full flex flex-col justify-center items-center">
+    
+    <!-- Title & Intro -->
+    <div class="text-center max-w-2xl mx-auto mb-16 animate-fade-in-up">
+      <span class="text-xs font-extrabold uppercase tracking-widest text-cyan-400">Lo Que Hacemos</span>
+      <h1 class="font-extrabold text-white mt-2 mb-4 leading-tight text-5xl sm:text-6xl bg-gradient-to-r from-white via-white to-white/70 bg-clip-text text-transparent">
+        Nuestros Servicios
+      </h1>
+      <p class="text-lg text-white/60 leading-relaxed font-light">
+        Ofrecemos soluciones digitales de punta que combinan diseño premium con tecnología escalable y un soporte continuo e incondicional.
+      </p>
+    </div>
+
+    <!-- Grid Container -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full mb-16 animate-fade-in-up" style="animation-delay: 0.15s;">
       {
         SERVICES.map((item, index) => (
-          <article class="w-full">
-            <Image
-              class="m-auto mb-2 rounded bg-shadow shadow-[2px_2px_8px_rgba(0,0,0,0.2)]"
-              src={`/images/${item.image}`}
-              width="350"
-              height="230"
-              loading={index > 1 ? "lazy" : "eager"}
-              alt={`Imágen de ${item.label}`}
-            />
-            <h3 class="my-2 text-center font-extrabold md:text-3xl">{item.label}</h3>
-            <p>{item.description}</p>
+          <article class="group relative rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 overflow-hidden flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 shadow-xl hover:shadow-2xl">
+            <!-- Hover Glow Overlay -->
+            <div class={`absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r ${
+              item.color === 'fuchsia' ? 'from-fuchsia-500 to-purple-600' :
+              item.color === 'cyan' ? 'from-cyan-400 to-blue-500' :
+              'from-blue-500 to-fuchsia-500'
+            }`} />
+
+            <div class="p-6 flex-grow flex flex-col">
+              <!-- Image Container -->
+              <div class="relative w-full aspect-[16/10] rounded-xl overflow-hidden mb-6 border border-white/5 bg-space-850">
+                <!-- Badge -->
+                <span class="absolute top-3 left-3 z-10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider bg-space-950/80 text-white/80 rounded-full border border-white/10 backdrop-blur-md">
+                  {item.badge}
+                </span>
+                
+                <Image
+                  class="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+                  src={item.image}
+                  width={350}
+                  height={220}
+                  loading={index > 2 ? "lazy" : "eager"}
+                  alt={`Imágen de ${item.label}`}
+                />
+              </div>
+
+              <!-- Title -->
+              <h3 class="text-xl font-bold text-white mb-3 group-hover:text-fuchsia-400 transition-colors duration-300">
+                {item.label}
+              </h3>
+
+              <!-- Description -->
+              <p class="text-sm text-white/65 leading-relaxed font-light flex-grow">
+                {item.description}
+              </p>
+            </div>
           </article>
         ))
       }
     </div>
-    <ButtonLink
-      href="/planes"
-      label="Nuestros Planes"
-      btnClasses="mx-auto mt-4 bg-custom-gradient hover:bg-none hover:bg-shadow text-blue-500 hover:border-white hover:border-[3px] hover:text-white"
-    />
+
+    <!-- CTA Section -->
+    <div class="flex flex-col items-center gap-4 animate-fade-in-up" style="animation-delay: 0.3s;">
+      <h3 class="text-lg font-bold text-white/80">¿Listo para potenciar tu presencia digital?</h3>
+      <ButtonLink
+        href="/planes"
+        label="Nuestros Planes"
+        btnClasses="bg-gradient-to-r from-blue-500 via-fuchsia-500 to-cyan-500 hover:from-blue-600 hover:via-fuchsia-600 hover:to-cyan-600 text-white rounded-xl shadow-lg hover:-translate-y-0.5 duration-300 transition-all font-semibold px-8 py-3"
+      />
+    </div>
   </section>
 </Layout>
-
-<style lang="scss">
-  .gridContainer {
-    grid-template-columns: repeat(1, 90%);
-
-    img {
-      max-width: 100%;
-      aspect-ratio: 1.5;
-    }
-
-    @media (min-width: 500px) {
-      grid-template-columns: repeat(1, 80%);
-    }
-
-    @media (min-width: 500px) {
-      grid-template-columns: repeat(1, 70%);
-    }
-
-    @media (min-width: 768px) {
-      grid-template-columns: repeat(2, 40%);
-    }
-
-    @media (min-width: 900px) {
-      // grid-template-columns: repeat(2, 40%);
-    }
-
-    @media (min-width: 1024px) {
-      justify-content: space-evenly;
-    }
-
-    @media (min-width: 1440px) {
-      justify-content: space-between;
-    }
-  }
-</style>

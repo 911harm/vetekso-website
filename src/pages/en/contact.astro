@@ -1,0 +1,76 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  title="Vetekso - Contact"
+  description="Have questions or need more information? Get in touch with us. Schedule a 30-minute video call or reach out by email or WhatsApp."
+  pageId="contact"
+  locale="en"
+>
+  <section class="relative min-h-[80vh] px-6 sm:px-12 py-12 md:py-20 flex flex-col lg:flex-row justify-center items-stretch gap-12 max-w-7xl mx-auto z-10 w-full">
+    <!-- Left Column -->
+    <div class="w-full lg:w-5/12 flex flex-col justify-center gap-8 animate-fade-in-up">
+      <div>
+        <span class="text-xs font-extrabold uppercase tracking-widest text-cyan-400">Ready to start?</span>
+        <h1 class="font-extrabold text-white mt-2 mb-6 leading-tight text-5xl xl:text-6xl text-left">
+          Let's Talk About Your Project
+        </h1>
+        <p class="text-lg text-white/70 leading-relaxed font-light mb-4">
+          Have an idea in mind or need to boost your digital presence? Schedule a free 30-minute strategic session with our team, or reach out directly through any of our channels.
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-4">
+        <a href="https://wa.me/573104848412" target="_blank" rel="noopener noreferrer"
+          class="group flex items-center gap-5 p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-fuchsia-500/30 hover:bg-fuchsia-500/5 transition-all duration-300">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
+          </div>
+          <div>
+            <h4 class="font-bold text-white text-base">WhatsApp</h4>
+            <p class="text-sm text-white/60 group-hover:text-fuchsia-300 transition-colors">+57 310 484 8412</p>
+          </div>
+        </a>
+
+        <a href="mailto:info@vetekso.com"
+          class="group flex items-center gap-5 p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-fuchsia-500/30 hover:bg-fuchsia-500/5 transition-all duration-300">
+          <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+          </div>
+          <div>
+            <h4 class="font-bold text-white text-base">Email</h4>
+            <p class="text-sm text-white/60 group-hover:text-fuchsia-300 transition-colors">info@vetekso.com</p>
+          </div>
+        </a>
+
+        <a href="tel:+573162951345"
+          class="group flex items-center gap-5 p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-fuchsia-500/30 hover:bg-fuchsia-500/5 transition-all duration-300">
+          <div class="w-12 h-12 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-violet-400 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+          </div>
+          <div>
+            <h4 class="font-bold text-white text-base">Direct Line</h4>
+            <p class="text-sm text-white/60 group-hover:text-fuchsia-300 transition-colors">+57 316 295 1345</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right Column: Calendly -->
+    <div class="w-full lg:w-7/12 flex items-center justify-center animate-fade-in-up" style="animation-delay: 0.2s;">
+      <div class="w-full bg-white/5 border border-white/10 backdrop-blur-xl rounded-2xl p-4 sm:p-6 shadow-2xl overflow-hidden relative">
+        <div class="absolute -top-10 -right-10 w-40 h-40 bg-fuchsia-500/10 rounded-full blur-2xl pointer-events-none"></div>
+        <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-blue-500/10 rounded-full blur-2xl pointer-events-none"></div>
+        <div class="relative z-10 w-full">
+          <div class="mb-6">
+            <h3 class="font-bold text-white text-xl">Schedule a Meeting</h3>
+            <p class="text-sm text-white/50">Select your preferred day and time in the calendar</p>
+          </div>
+          <div class="calendly-inline-widget rounded-xl overflow-hidden bg-space-850/80 border border-white/5" data-url="https://calendly.com/info-lptw/30min?primary_color=841b71" style="min-width:320px;height:650px;"></div>
+          <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async is:inline></script>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

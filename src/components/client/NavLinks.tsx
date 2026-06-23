@@ -1,16 +1,23 @@
-import { NAV_LINKS } from "../../utils/consts";
+import { NAV_LINKS, EN_NAV_LINKS } from "../../utils/consts";
 
-const NavLinks = ({ currentPathname }: { currentPathname: string }) => {
+interface Props {
+  currentPathname: string;
+  locale?: string;
+}
+
+const NavLinks = ({ currentPathname, locale = "es" }: Props) => {
+  const links = locale === "en" ? EN_NAV_LINKS : NAV_LINKS;
+
   return (
     <div
       className="hidden md:flex items-center space-x-3 min-[850px]:space-x-6 lg:space-x-8 xl:space-x-10 w-full md:w-auto"
       id="navbar-default"
     >
-      {NAV_LINKS.map(({ label, pathname }) => {
+      {links.map(({ label, pathname }) => {
         const isActive =
-          pathname === "/"
+          pathname === "/" || pathname === "/en"
             ? currentPathname === pathname
-            : currentPathname.includes(pathname.substring(1));
+            : currentPathname.startsWith(pathname);
 
         return (
           <a

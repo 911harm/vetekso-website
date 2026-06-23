@@ -1,0 +1,140 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ButtonLink from "../../components/shared/ButtonLink.astro";
+---
+
+<Layout
+  title="Vetekso - Tailored for You"
+  description="AI-powered software accompaniment and implementations supervised by experts. We design, monitor, and grow with you."
+  pageId="tailored"
+  locale="en"
+>
+  <!-- Hero -->
+  <section class="relative overflow-hidden min-h-[85vh] flex items-center border-b border-white/5">
+    <div class="absolute inset-0 pointer-events-none opacity-20 mix-blend-screen flex items-center justify-center overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-t from-[#00105b] via-transparent to-[#841b71] opacity-10 z-10"></div>
+      <img class="w-full max-w-[800px] h-auto object-cover mask-centered-hero animate-hero-image" src="/images/tailored-software.png" alt="Tailored software development with AI" />
+    </div>
+    <div class="relative z-20 max-w-4xl w-full px-6 sm:px-12 py-16 lg:py-24 m-auto flex flex-col items-center text-center gap-6">
+      <div class="inline-flex px-3 py-1 text-xs font-semibold tracking-wider text-fuchsia-100 uppercase rounded-full bg-translucent border border-fuchsia-100/30">Tailored Solutions</div>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-white drop-shadow-md">
+        Development & Accompaniment <span class="bg-custom-gradient bg-clip-text text-transparent">Tailored for You</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-white/90 leading-relaxed font-medium max-w-2xl">
+        At Vetek So we don't just write code — we grow and develop your project side by side with you. We turn your general ideas into robust and scalable digital implementations, adapting to your business rhythm.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 mt-4 w-full">
+        <ButtonLink href="/en/contact" label="Book a Free Consultation" btnClasses="bg-gradient-to-r from-blue-500 via-fuchsia-500 to-cyan-500 hover:from-blue-600 hover:via-fuchsia-600 hover:to-cyan-600 text-white rounded-xl shadow-lg shadow-fuchsia-500/20 hover:shadow-fuchsia-500/40 hover:-translate-y-0.5 hover:scale-102 active:scale-95 duration-300 transition-all border-none font-semibold text-lg max-w-none sm:max-w-[280px] whitespace-nowrap" />
+        <ButtonLink href="#process" label="Learn Our Process" btnClasses="bg-space-800 border border-white/20 hover:border-white/40 hover:bg-space-700 text-white rounded-xl hover:-translate-y-0.5 hover:scale-102 active:scale-95 duration-300 transition-all font-semibold text-lg shadow-xl whitespace-nowrap" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section id="process" class="relative overflow-hidden bg-gradient-to-b from-space-950/60 via-space-900/30 to-space-950/60 py-16 lg:py-24 border-y border-white/5">
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none z-0" style="mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%); -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);"></div>
+    <div class="absolute top-[-10%] left-[10%] w-[350px] h-[350px] rounded-full bg-blue-500/10 blur-[100px] pointer-events-none z-0 animate-pulse-glow"></div>
+    <div class="absolute bottom-[-10%] right-[10%] w-[350px] h-[350px] rounded-full bg-fuchsia-500/10 blur-[100px] pointer-events-none z-0 animate-pulse-glow" style="animation-delay: -2s;"></div>
+
+    <div class="relative z-10 max-w-6xl px-6 sm:px-12 m-auto">
+      <div class="text-center max-w-3xl m-auto mb-16">
+        <h2 class="font-extrabold text-3xl sm:text-4xl mb-6 text-white leading-tight">
+          Not sure about every detail yet?<br/>
+          <span class="bg-custom-gradient bg-clip-text text-transparent">No problem. We shape it together.</span>
+        </h2>
+        <p class="text-base sm:text-lg text-white/85">
+          We understand that successful projects don't start fully structured on day one. We work under an agile and collaborative framework where each stage is analyzed, monitored, and optimized along the way.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {[
+          { n: 1, title: "Ideate & Shape", desc: "We start with a general vision. We analyze your business bottlenecks and structure initial proposals, refining them through continuous dialogue." },
+          { n: 2, title: "Monitor in Real Time", desc: "Once the base solution is implemented, we establish clear metrics. We observe how your team or clients interact with the system to identify timely improvements." },
+          { n: 3, title: "Measure & Polish", desc: "We use collected data to optimize the software. We remove what's unnecessary, strengthen what works, and add new capabilities in an evolutionary way." },
+        ].map(({ n, title, desc }) => (
+          <div class="relative bg-gradient-to-b from-white/[0.04] to-white/[0.01] border border-white/10 p-8 rounded-2xl hover:border-fuchsia-400/30 transition-all duration-300 flex flex-col items-center text-center gap-4 group overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-tr from-blue-500/10 via-fuchsia-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0"></div>
+            <div class="relative z-10 w-12 h-12 rounded-xl bg-custom-gradient flex items-center justify-center text-blue-500 font-extrabold text-xl shadow-md transition-transform duration-300 group-hover:scale-110">{n}</div>
+            <h3 class="relative z-10 font-bold text-xl text-white group-hover:text-fuchsia-100 transition-colors duration-300">{title}</h3>
+            <p class="relative z-10 text-white/75 text-sm leading-relaxed">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- AI + Experts -->
+  <section class="relative overflow-hidden py-16 lg:py-24 border-b border-white/5 flex items-center">
+    <div class="absolute inset-0 pointer-events-none opacity-15 mix-blend-screen flex items-center justify-center overflow-hidden">
+      <img class="w-full max-w-[800px] h-auto object-cover mask-centered-dashboard animate-hero-image" src="/images/dashboard-monitoring.png" alt="Real-time monitoring and analysis dashboard" />
+    </div>
+    <div class="relative z-20 max-w-4xl w-full px-6 sm:px-12 m-auto flex flex-col items-center text-center gap-6">
+      <div class="inline-flex px-3 py-1 text-xs font-semibold tracking-wider text-fuchsia-100 uppercase rounded-full bg-translucent border border-fuchsia-100/30">Intelligence + Expertise</div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+        Powered by <span class="bg-custom-gradient bg-clip-text text-transparent">Artificial Intelligence</span>, backed by experts
+      </h2>
+      <p class="text-white/85 leading-relaxed text-base sm:text-lg max-w-3xl">We accelerate the development cycle by integrating advanced AI tools for clean code generation, complex automations, and rapid data modeling.</p>
+      <p class="text-white/85 leading-relaxed text-base sm:text-lg font-medium max-w-3xl">Yet technology means nothing without the right guidance. Every step is supervised and designed by human experts dedicated to ensuring your data security, architectural robustness, and perfect alignment with your goals.</p>
+      <ul class="flex flex-col gap-3 mt-4 text-white/90 text-left max-w-2xl mx-auto">
+        <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-fuchsia-100 mt-2 flex-shrink-0"></span><span>Agile development and ultra-fast prototyping with state-of-the-art AI assistance.</span></li>
+        <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-fuchsia-100 mt-2 flex-shrink-0"></span><span>Senior software architects and business consultants overseeing code quality.</span></li>
+        <li class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-fuchsia-100 mt-2 flex-shrink-0"></span><span>Constant monitoring and secure, scalable cloud data integrations.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Implementation types -->
+  <section class="relative overflow-hidden bg-gradient-to-b from-space-950/60 via-space-900/30 to-space-950/60 py-16 lg:py-24 border-t border-white/5">
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none z-0" style="mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%); -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);"></div>
+    <div class="relative z-10 max-w-6xl px-6 sm:px-12 m-auto">
+      <div class="text-center max-w-3xl m-auto mb-16">
+        <h2 class="font-extrabold text-3xl sm:text-4xl mb-4 text-white">What types of implementations do we cover?</h2>
+        <p class="text-white/80">We have experience across diverse technologies and integrations to build exactly the engine your company needs for sustained growth.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          { icon: "⚙️", title: "Custom ERP / CRM Systems", desc: "Manage your inventory, clients, sales, and invoicing in a single platform designed exclusively for your current workflows." },
+          { icon: "🤖", title: "AI Automation & Integration", desc: "We connect LLMs, conversational agents, and automations that save your team hours of manual operational work." },
+          { icon: "🌐", title: "SaaS Platforms & Web Apps", desc: "From initial idea to production deployment, we create secure, responsive, high-performance software-as-a-service applications." },
+          { icon: "🔌", title: "Complex API Integrations", desc: "We connect your current systems with payment gateways, messaging services, external databases, or logistics providers." },
+          { icon: "📊", title: "Dashboards & Data Intelligence", desc: "Visualize critical operational or sales metrics. We connect your data flows to interactive panels to facilitate decision-making." },
+          { icon: "💡", title: "Got another idea?", desc: "Tell us what it's about and we'll build an evolutionary development plan together.", cta: true },
+        ].map(({ icon, title, desc, cta }) => (
+          <div class={`relative bg-gradient-to-b ${cta ? 'from-fuchsia-500/10 to-blue-500/15' : 'from-white/[0.04] to-white/[0.01]'} border border-white/10 p-6 rounded-xl hover:border-fuchsia-400/30 transition-all duration-300 flex flex-col items-center text-center gap-3 group overflow-hidden`}>
+            <div class="absolute inset-0 bg-gradient-to-tr from-blue-500/10 via-fuchsia-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0"></div>
+            <div class="relative z-10 text-2xl transition-transform duration-300 group-hover:scale-110">{icon}</div>
+            <h4 class="relative z-10 font-bold text-lg text-white group-hover:text-fuchsia-100 transition-colors duration-300">{title}</h4>
+            <p class="relative z-10 text-white/70 text-sm leading-relaxed">{desc}</p>
+            {cta && <a href="/en/contact" class="relative z-10 text-fuchsia-100 font-bold hover:underline text-sm transition-transform duration-300 group-hover:scale-105">Let's talk today →</a>}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="max-w-4xl px-6 sm:px-12 py-16 m-auto text-center flex flex-col items-center gap-6">
+    <h2 class="font-extrabold text-3xl sm:text-4xl text-white">Ready to start shaping your project?</h2>
+    <p class="text-white/85 max-w-xl text-base sm:text-lg">Don't worry if you still have questions. Schedule a free 30-minute exploratory session to talk about your business goals and how we can get started together.</p>
+    <ButtonLink href="/en/contact" label="Book a 30-min Session" btnClasses="mt-4 bg-gradient-to-r from-blue-500 via-fuchsia-500 to-cyan-500 hover:from-blue-600 hover:via-fuchsia-600 hover:to-cyan-600 text-white rounded-xl shadow-lg shadow-fuchsia-500/20 hover:shadow-fuchsia-500/40 hover:-translate-y-0.5 hover:scale-102 active:scale-95 duration-300 transition-all border-none font-semibold text-lg max-w-none sm:max-w-[320px] whitespace-nowrap" />
+  </section>
+</Layout>
+
+<style lang="scss">
+  .mask-centered-hero {
+    -webkit-mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 80%);
+    mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 80%);
+  }
+  .mask-centered-dashboard {
+    -webkit-mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 80%);
+    mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 80%);
+  }
+  .animate-hero-image {
+    animation: floatHero 10s ease-in-out infinite;
+  }
+  @keyframes floatHero {
+    0%, 100% { transform: translateY(0px) scale(1); }
+    50% { transform: translateY(-12px) scale(1.03); }
+  }
+</style>

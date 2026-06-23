@@ -8,13 +8,14 @@ interface Props {
   title: string;
   description: string;
   pageId?: string;
+  locale?: string;
 }
 
-const { title, description, pageId } = Astro.props;
+const { title, description, pageId, locale = Astro.currentLocale ?? "es" } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es" class="scroll-smooth" id={pageId}>
+<html lang={locale} class="scroll-smooth" id={pageId}>
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -35,11 +36,11 @@ const { title, description, pageId } = Astro.props;
     <div class="fixed top-[35%] left-[55%] w-[35vw] h-[35vw] max-w-[400px] max-h-[400px] rounded-full bg-cyan-500/5 blur-[100px] pointer-events-none animate-pulse-glow z-0" style="animation-delay: -1.5s;"></div>
 
     <div class="relative z-10 flex flex-col min-h-screen w-full">
-      <Header />
+      <Header locale={locale} />
       <main class="flex-grow pt-[100px]">
         <slot />
       </main>
-      <Footer />
+      <Footer locale={locale} />
     </div>
 
     <style is:global lang="scss">

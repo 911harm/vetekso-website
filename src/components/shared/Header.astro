@@ -2,30 +2,44 @@
 import ToggleMenu from "../client/ToggleMenu";
 import NavLinks from "../client/NavLinks";
 import NavMenu from "../client/NavMenu";
+import LangSwitcher from "../client/LangSwitcher";
 import Image from "astro/components/Image.astro";
+import { getEquivalentPath } from "../../i18n/utils";
+
+interface Props {
+  locale?: string;
+}
+
+const { locale = "es" } = Astro.props;
+const pathname = Astro.url.pathname;
+const targetLocale = locale === "es" ? "en" : "es";
+const equivalentPath = getEquivalentPath(pathname, targetLocale as "es" | "en");
+const homeHref = locale === "en" ? "/en" : "/";
 ---
 
 <header
   class="fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-6xl z-50 rounded-2xl border border-white/10 backdrop-blur-xl shadow-xl shadow-black/40 header-capsule"
   transition:animate="none"
 >
-  <nav
-    class="h-[80px] max-w-6xl mx-auto px-6 sm:px-10 flex justify-between items-center"
-  >
-  <a href="/" class="flex items-center gap-2 hover:opacity-90">
-    <Image
-      class="max-[500px]:max-h-[24px] max-[500px]:max-w-[110px]"
-      src="/images/logo-main.svg"
-      width="150"
-      height="30"
-      loading="eager"
-      alt="Vetekso Logo"
-    />
-  </a>
-    <ToggleMenu client:load />
-    <NavLinks client:load currentPathname={Astro.url.pathname} />
+  <nav class="h-[80px] max-w-6xl mx-auto px-6 sm:px-10 flex justify-between items-center gap-4">
+    <a href={homeHref} class="flex items-center gap-2 hover:opacity-90 shrink-0">
+      <Image
+        class="max-[500px]:max-h-[24px] max-[500px]:max-w-[110px]"
+        src="/images/logo-main.svg"
+        width="150"
+        height="30"
+        loading="eager"
+        alt="Vetekso Logo"
+      />
+    </a>
+
+    <div class="flex items-center gap-3 ml-auto">
+      <NavLinks client:load currentPathname={pathname} locale={locale} />
+      <LangSwitcher client:load currentLocale={locale} equivalentPath={equivalentPath} />
+      <ToggleMenu client:load />
+    </div>
   </nav>
-  <NavMenu client:load currentPathname={Astro.url.pathname} />
+  <NavMenu client:load currentPathname={pathname} locale={locale} />
 </header>
 
 <style>

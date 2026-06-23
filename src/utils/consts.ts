@@ -8,10 +8,6 @@ export const NAV_LINKS = [
     pathname: "/nosotros",
   },
   {
-    label: "Planes",
-    pathname: "/planes",
-  },
-  {
     label: "Servicios",
     pathname: "/servicios",
   },

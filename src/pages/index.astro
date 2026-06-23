@@ -15,3 +15,22 @@ import ServicesSection from "../components/pages/inicio/ServicesSection.astro";
   <PlansSection />
   <ServicesSection />
 </Layout>
+
+<!-- Client-side language detection: runs before paint when possible -->
+<script is:inline>
+  (function () {
+    try {
+      var saved = document.cookie.match(/(?:^|;\s*)lang=([^;]+)/);
+      if (saved) {
+        if (saved[1] === 'en') window.location.replace('/en');
+        return; // cookie set — respect it, no further action
+      }
+      // First visit: check browser preference
+      var lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+      if (lang.startsWith('en')) {
+        document.cookie = 'lang=en;path=/;max-age=' + (60 * 60 * 24 * 365) + ';SameSite=Lax';
+        window.location.replace('/en');
+      }
+    } catch (_) {}
+  })();
+</script>

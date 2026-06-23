@@ -1,9 +1,16 @@
 import { useStore } from "@nanostores/react";
-import { NAV_LINKS } from "../../utils/consts";
+import { NAV_LINKS, EN_NAV_LINKS } from "../../utils/consts";
 import { isMenuOpen } from "../../store";
 
-const NavMenu = ({ currentPathname }: { currentPathname: string }) => {
+interface Props {
+  currentPathname: string;
+  locale?: string;
+}
+
+const NavMenu = ({ currentPathname, locale = "es" }: Props) => {
   const $isMenuOpen = useStore(isMenuOpen);
+  const links = locale === "en" ? EN_NAV_LINKS : NAV_LINKS;
+
   const asideClass = $isMenuOpen
     ? "h-screen w-screen bg-black/60 backdrop-blur-sm z-40"
     : "w-0 bg-transparent z-[-1] pointer-events-none";
@@ -15,6 +22,8 @@ const NavMenu = ({ currentPathname }: { currentPathname: string }) => {
     }
   };
 
+  const homeHref = locale === "en" ? "/en" : "/";
+
   return (
     <aside
       className={`fixed inset-0 transition-all duration-300 ${asideClass}`}
@@ -24,19 +33,19 @@ const NavMenu = ({ currentPathname }: { currentPathname: string }) => {
         className={`w-[260px] h-screen p-[38px] flex flex-col items-center gap-10 bg-[#030014]/95 border-r border-white/10 backdrop-blur-2xl md:hidden rounded-e-2xl transition-transform duration-500 shadow-2xl ${navClass}`}
         id="menu"
       >
-        <a href="/" onClick={() => isMenuOpen.set(false)}>
-        <img
-          className={`w-[130px]`}
-          src="/images/logo-main.svg"
-          alt="Vetekso Logo"
-        />
+        <a href={homeHref} onClick={() => isMenuOpen.set(false)}>
+          <img
+            className="w-[130px]"
+            src="/images/logo-main.svg"
+            alt="Vetekso Logo"
+          />
         </a>
         <div className="w-full flex flex-col gap-6">
-          {NAV_LINKS.map(({ label, pathname }) => {
+          {links.map(({ label, pathname }) => {
             const isActive =
-              pathname === "/"
+              pathname === "/" || pathname === "/en"
                 ? currentPathname === pathname
-                : currentPathname.includes(pathname.substring(1));
+                : currentPathname.startsWith(pathname);
 
             return (
               <a

@@ -1,0 +1,35 @@
+---
+import ButtonLink from "../../../shared/ButtonLink.astro";
+---
+
+<section class="relative py-20 lg:py-28 overflow-hidden">
+  <div class="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.015)_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none"></div>
+  <div class="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-blue-500/5 rounded-full blur-[100px] pointer-events-none"></div>
+  <div class="absolute bottom-0 left-1/4 w-72 h-72 bg-fuchsia-500/5 rounded-full blur-[80px] pointer-events-none"></div>
+
+  <div class="relative z-10 max-w-4xl mx-auto px-6 sm:px-10 flex flex-col items-center text-center gap-8">
+    <span class="text-xs font-extrabold uppercase tracking-widest text-fuchsia-400">Tailored pricing</span>
+
+    <h2 class="font-extrabold text-white leading-tight">
+      Every project is unique.<br />
+      <span class="bg-gradient-to-r from-fuchsia-400 to-blue-400 bg-clip-text text-transparent">Quote yours.</span>
+    </h2>
+
+    <p class="text-lg text-white/60 leading-relaxed font-light max-w-2xl">
+      We don't use fixed rates because every business has different needs. Tell us what you need and we'll prepare a proposal tailored to your exact goals and budget.
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-4 mt-2">
+      <ButtonLink
+        href="/en/contact"
+        label="Request a quote"
+        btnClasses="bg-gradient-to-r from-blue-500 to-fuchsia-500 hover:from-blue-600 hover:to-fuchsia-600 text-white rounded-xl shadow-lg hover:-translate-y-0.5 duration-300 transition-all font-semibold px-8 py-3.5 whitespace-nowrap"
+      />
+      <ButtonLink
+        href="/en/services"
+        label="View services"
+        btnClasses="bg-white/5 border border-white/15 hover:border-white/30 hover:bg-white/10 text-white rounded-xl duration-300 transition-all font-semibold px-8 py-3.5 whitespace-nowrap"
+      />
+    </div>
+  </div>
+</section>

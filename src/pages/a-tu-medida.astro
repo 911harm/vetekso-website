@@ -1,0 +1,285 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ButtonLink from "../components/shared/ButtonLink.astro";
+---
+
+<Layout
+  title="VETEK SO - A Tu Medida"
+  description="Acompañamiento e implementaciones de software a la medida impulsadas por IA y supervisadas por expertos. Diseñamos, monitoreamos y crecemos contigo."
+  pageId="a-tu-medida"
+>
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden min-h-[85vh] flex items-center border-b border-white/5">
+    <!-- Image Integrated as Background Centered -->
+    <div class="absolute inset-0 pointer-events-none opacity-20 mix-blend-screen flex items-center justify-center overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-t from-[#00105b] via-transparent to-[#841b71] opacity-10 z-10"></div>
+      <img
+        class="w-full max-w-[800px] h-auto object-cover mask-centered-hero animate-hero-image"
+        src="/images/tailored-software.png"
+        alt="Ilustración de Desarrollo de Software a la medida con IA de Vetek So"
+      />
+    </div>
+
+    <div class="relative z-20 max-w-4xl w-full px-6 sm:px-12 py-16 lg:py-24 m-auto flex flex-col items-center text-center gap-6">
+      <div class="inline-flex px-3 py-1 text-xs font-semibold tracking-wider text-fuchsia-100 uppercase rounded-full bg-translucent border border-fuchsia-100/30">
+        Soluciones a Medida
+      </div>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-white drop-shadow-md">
+        Desarrollo y Acompañamiento <span class="bg-custom-gradient bg-clip-text text-transparent">A Tu Medida</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-white/90 leading-relaxed font-medium max-w-2xl">
+        En Vetek So no solo escribimos código; crecemos y desarrollamos tu proyecto de la mano contigo. Convertimos tus ideas generales en implementaciones digitales robustas y escalables, adaptándonos al ritmo de tu negocio.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 mt-4 w-full">
+        <ButtonLink
+          href="/contacto"
+          label="Agendar Consulta Gratis"
+          btnClasses="bg-gradient-to-r from-blue-500 via-fuchsia-500 to-cyan-500 hover:from-blue-600 hover:via-fuchsia-600 hover:to-cyan-600 text-white rounded-xl shadow-lg shadow-fuchsia-500/20 hover:shadow-fuchsia-500/40 hover:-translate-y-0.5 hover:scale-102 active:scale-95 duration-300 transition-all border-none font-semibold text-lg max-w-none sm:max-w-[260px] whitespace-nowrap"
+        />
+        <ButtonLink
+          href="#proceso"
+          label="Conocer Proceso"
+          btnClasses="bg-space-800 border border-white/20 hover:border-white/40 hover:bg-space-700 text-white rounded-xl hover:-translate-y-0.5 hover:scale-102 active:scale-95 duration-300 transition-all font-semibold text-lg shadow-xl whitespace-nowrap"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Filosofía: Moldeamos juntos -->
+  <section id="proceso" class="relative overflow-hidden bg-gradient-to-b from-space-950/60 via-space-900/30 to-space-950/60 py-16 lg:py-24 border-y border-white/5">
+    <!-- Grid decorativo de fondo -->
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none z-0" style="mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%); -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);"></div>
+
+    <!-- Orbes de luz decorativos -->
+    <div class="absolute top-[-10%] left-[10%] w-[350px] h-[350px] rounded-full bg-blue-500/10 blur-[100px] pointer-events-none z-0 animate-pulse-glow"></div>
+    <div class="absolute bottom-[-10%] right-[10%] w-[350px] h-[350px] rounded-full bg-fuchsia-500/10 blur-[100px] pointer-events-none z-0 animate-pulse-glow" style="animation-delay: -2s;"></div>
+
+    <div class="relative z-10 max-w-6xl px-6 sm:px-12 m-auto">
+      <div class="text-center max-w-3xl m-auto mb-16">
+        <h2 class="font-extrabold text-3xl sm:text-4xl mb-6 text-white leading-tight">
+          ¿No tienes claro todos los aspectos de tu necesidad? <br/>
+          <span class="bg-custom-gradient bg-clip-text text-transparent">No hay problema. Lo moldeamos juntos.</span>
+        </h2>
+        <p class="text-base sm:text-lg text-white/85">
+          Entendemos que los proyectos exitosos no nacen completamente estructurados desde el primer día. Trabajamos bajo un esquema ágil y colaborativo donde cada etapa se analiza, monitorea y optimiza sobre la marcha.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Paso 1 -->
+        <div class="relative bg-gradient-to-b from-white/[0.04] to-white/[0.01] border border-white/10 p-8 rounded-2xl hover:border-fuchsia-400/30 transition-all duration-300 flex flex-col items-center text-center gap-4 group overflow-hidden">
+          <!-- Glow on hover -->
+          <div class="absolute inset-0 bg-gradient-to-tr from-blue-500/10 via-fuchsia-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0"></div>
+          
+          <div class="relative z-10 w-12 h-12 rounded-xl bg-custom-gradient flex items-center justify-center text-blue-500 font-extrabold text-xl shadow-md transition-transform duration-300 group-hover:scale-110">
+            1
+          </div>
+          <h3 class="relative z-10 font-bold text-xl text-white group-hover:text-fuchsia-100 transition-colors duration-300">Idear y Moldear</h3>
+          <p class="relative z-10 text-white/75 text-sm leading-relaxed">
+            Comenzamos con una visión general. Analizamos los cuellos de botella de tu negocio y estructuramos las primeras propuestas, refinándolas a través del diálogo continuo.
+          </p>
+        </div>
+
+        <!-- Paso 2 -->
+        <div class="relative bg-gradient-to-b from-white/[0.04] to-white/[0.01] border border-white/10 p-8 rounded-2xl hover:border-fuchsia-400/30 transition-all duration-300 flex flex-col items-center text-center gap-4 group overflow-hidden">
+          <!-- Glow on hover -->
+          <div class="absolute inset-0 bg-gradient-to-tr from-blue-500/10 via-fuchsia-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0"></div>
+          
+          <div class="relative z-10 w-12 h-12 rounded-xl bg-custom-gradient flex items-center justify-center text-blue-500 font-extrabold text-xl shadow-md transition-transform duration-300 group-hover:scale-110">
+            2
+          </div>
+          <h3 class="relative z-10 font-bold text-xl text-white group-hover:text-fuchsia-100 transition-colors duration-300">Monitorear en Tiempo Real</h3>
+          <p class="relative z-10 text-white/75 text-sm leading-relaxed">
+            Una vez implementada la solución base, establecemos métricas claras. Observamos cómo interactúa tu equipo o tus clientes con el sistema para identificar mejoras oportunas.
+          </p>
+        </div>
+
+        <!-- Paso 3 -->
+        <div class="relative bg-gradient-to-b from-white/[0.04] to-white/[0.01] border border-white/10 p-8 rounded-2xl hover:border-fuchsia-400/30 transition-all duration-300 flex flex-col items-center text-center gap-4 group overflow-hidden">
+          <!-- Glow on hover -->
+          <div class="absolute inset-0 bg-gradient-to-tr from-blue-500/10 via-fuchsia-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0"></div>
+          
+          <div class="relative z-10 w-12 h-12 rounded-xl bg-custom-gradient flex items-center justify-center text-blue-500 font-extrabold text-xl shadow-md transition-transform duration-300 group-hover:scale-110">
+            3
+          </div>
+          <h3 class="relative z-10 font-bold text-xl text-white group-hover:text-fuchsia-100 transition-colors duration-300">Medir y Pulir</h3>
+          <p class="relative z-10 text-white/75 text-sm leading-relaxed">
+            Utilizamos los datos recopilados para optimizar el software. Quitamos lo innecesario, potenciamos lo que funciona y agregamos nuevas capacidades de manera evolutiva.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IA + Expertos -->
+  <section class="relative overflow-hidden py-16 lg:py-24 border-b border-white/5 flex items-center">
+    <!-- Image Integrated as Background Centered -->
+    <div class="absolute inset-0 pointer-events-none opacity-15 mix-blend-screen flex items-center justify-center overflow-hidden">
+      <img
+        class="w-full max-w-[800px] h-auto object-cover mask-centered-dashboard animate-hero-image"
+        src="/images/dashboard-monitoring.png"
+        alt="Dashboard de monitoreo y análisis en tiempo real"
+      />
+    </div>
+
+    <div class="relative z-20 max-w-4xl w-full px-6 sm:px-12 m-auto flex flex-col items-center text-center gap-6">
+      <div class="inline-flex px-3 py-1 text-xs font-semibold tracking-wider text-fuchsia-100 uppercase rounded-full bg-translucent border border-fuchsia-100/30">
+        Inteligencia + Experiencia
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+        Impulsado por <span class="bg-custom-gradient bg-clip-text text-transparent">Inteligencia Artificial</span>, respaldado por expertos
+      </h2>
+      <p class="text-white/85 leading-relaxed text-base sm:text-lg max-w-3xl">
+        Aceleramos el ciclo de desarrollo integrando herramientas avanzadas de Inteligencia Artificial para la generación de código limpio, automatizaciones complejas y modelado de datos rápido.
+      </p>
+      <p class="text-white/85 leading-relaxed text-base sm:text-lg font-medium max-w-3xl">
+        Sin embargo, la tecnología no es nada sin la guía correcta. Todo el proceso está supervisado y diseñado por expertos humanos dedicados a garantizar la seguridad de tus datos, la robustez de la arquitectura, y la perfecta alineación con tus metas.
+      </p>
+      <ul class="flex flex-col gap-3 mt-4 text-white/90 text-left max-w-2xl mx-auto">
+        <li class="flex items-start gap-3">
+          <span class="w-2 h-2 rounded-full bg-fuchsia-100 mt-2 flex-shrink-0"></span>
+          <span>Desarrollo ágil y prototipado ultrarrápido con asistencia de IA de última generación.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="w-2 h-2 rounded-full bg-fuchsia-100 mt-2 flex-shrink-0"></span>
+          <span>Arquitectos de software y consultores de negocio senior vigilando la calidad del código.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="w-2 h-2 rounded-full bg-fuchsia-100 mt-2 flex-shrink-0"></span>
+          <span>Monitoreo constante e integraciones de datos seguras y escalables en la nube.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Tipos de Implementaciones -->
+  <section class="relative overflow-hidden bg-gradient-to-b from-space-950/60 via-space-900/30 to-space-950/60 py-16 lg:py-24 border-t border-white/5">
+    <!-- Grid decorativo de fondo -->
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none z-0" style="mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%); -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);"></div>
+
+    <!-- Orbes de luz decorativos -->
+    <div class="absolute top-[20%] right-[10%] w-[300px] h-[300px] rounded-full bg-blue-500/5 blur-[90px] pointer-events-none z-0 animate-pulse-glow"></div>
+    <div class="absolute bottom-[20%] left-[10%] w-[300px] h-[300px] rounded-full bg-fuchsia-500/5 blur-[90px] pointer-events-none z-0 animate-pulse-glow" style="animation-delay: -3s;"></div>
+
+    <div class="relative z-10 max-w-6xl px-6 sm:px-12 m-auto">
+      <div class="text-center max-w-3xl m-auto mb-16">
+        <h2 class="font-extrabold text-3xl sm:text-4xl mb-4 text-white">
+          ¿Qué tipo de implementaciones abarcamos?
+        </h2>
+        <p class="text-white/80">
+          Tenemos experiencia cubriendo diversas tecnologías e integraciones para construir exactamente el engranaje que tu empresa necesita para crecer de forma sostenida.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Implementación 1 -->
+        <div class="relative bg-gradient-to-b from-white/[0.04] to-white/[0.01] border border-white/10 p-6 rounded-xl hover:border-fuchsia-400/30 transition-all duration-300 flex flex-col items-center text-center gap-3 group overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-tr from-blue-500/10 via-fuchsia-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0"></div>
+          <div class="relative z-10 text-2xl transition-transform duration-300 group-hover:scale-110">⚙️</div>
+          <h4 class="relative z-10 font-bold text-lg text-white group-hover:text-fuchsia-100 transition-colors duration-300">Sistemas ERP / CRM a la medida</h4>
+          <p class="relative z-10 text-white/70 text-sm leading-relaxed">
+            Gestiona tus inventarios, clientes, ventas y facturación en una sola plataforma diseñada exclusivamente para tus flujos de trabajo actuales.
+          </p>
+        </div>
+
+        <!-- Implementación 2 -->
+        <div class="relative bg-gradient-to-b from-white/[0.04] to-white/[0.01] border border-white/10 p-6 rounded-xl hover:border-fuchsia-400/30 transition-all duration-300 flex flex-col items-center text-center gap-3 group overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-tr from-blue-500/10 via-fuchsia-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0"></div>
+          <div class="relative z-10 text-2xl transition-transform duration-300 group-hover:scale-110">🤖</div>
+          <h4 class="relative z-10 font-bold text-lg text-white group-hover:text-fuchsia-100 transition-colors duration-300">Automatizaciones e Integración de IA</h4>
+          <p class="relative z-10 text-white/70 text-sm leading-relaxed">
+            Conectamos modelos de lenguaje (LLMs), agentes conversacionales y automatizaciones que ahorran horas de trabajo operativo manual a tu equipo.
+          </p>
+        </div>
+
+        <!-- Implementación 3 -->
+        <div class="relative bg-gradient-to-b from-white/[0.04] to-white/[0.01] border border-white/10 p-6 rounded-xl hover:border-fuchsia-400/30 transition-all duration-300 flex flex-col items-center text-center gap-3 group overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-tr from-blue-500/10 via-fuchsia-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0"></div>
+          <div class="relative z-10 text-2xl transition-transform duration-300 group-hover:scale-110">🌐</div>
+          <h4 class="relative z-10 font-bold text-lg text-white group-hover:text-fuchsia-100 transition-colors duration-300">Plataformas SaaS y Web Apps</h4>
+          <p class="relative z-10 text-white/70 text-sm leading-relaxed">
+            Desde la idea inicial hasta el despliegue a producción, creamos aplicaciones de software como servicio seguras, responsivas y de alto rendimiento.
+          </p>
+        </div>
+
+        <!-- Implementación 4 -->
+        <div class="relative bg-gradient-to-b from-white/[0.04] to-white/[0.01] border border-white/10 p-6 rounded-xl hover:border-fuchsia-400/30 transition-all duration-300 flex flex-col items-center text-center gap-3 group overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-tr from-blue-500/10 via-fuchsia-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0"></div>
+          <div class="relative z-10 text-2xl transition-transform duration-300 group-hover:scale-110">🔌</div>
+          <h4 class="relative z-10 font-bold text-lg text-white group-hover:text-fuchsia-100 transition-colors duration-300">Integraciones de APIs Complejas</h4>
+          <p class="relative z-10 text-white/70 text-sm leading-relaxed">
+            Conectamos tus sistemas actuales con pasarelas de pago, servicios de mensajería, bases de datos externas o proveedores de logística.
+          </p>
+        </div>
+
+        <!-- Implementación 5 -->
+        <div class="relative bg-gradient-to-b from-white/[0.04] to-white/[0.01] border border-white/10 p-6 rounded-xl hover:border-fuchsia-400/30 transition-all duration-300 flex flex-col items-center text-center gap-3 group overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-tr from-blue-500/10 via-fuchsia-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0"></div>
+          <div class="relative z-10 text-2xl transition-transform duration-300 group-hover:scale-110">📊</div>
+          <h4 class="relative z-10 font-bold text-lg text-white group-hover:text-fuchsia-100 transition-colors duration-300">Dashboards e Inteligencia de Datos</h4>
+          <p class="relative z-10 text-white/70 text-sm leading-relaxed">
+            Visualiza métricas operativas o de ventas críticas. Conectamos tus flujos de datos a paneles interactivos para facilitar la toma de decisiones.
+          </p>
+        </div>
+
+        <!-- Implementación 6 -->
+        <div class="relative p-8 rounded-xl border border-white/10 flex flex-col justify-center items-center text-center bg-gradient-to-br from-fuchsia-500/10 to-blue-500/15 hover:border-fuchsia-400/30 transition-all duration-300 group overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-tr from-blue-500/10 via-fuchsia-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0"></div>
+          <h4 class="relative z-10 font-bold text-lg text-white mb-2 group-hover:text-fuchsia-100 transition-colors duration-300">¿Tienes otra idea en mente?</h4>
+          <p class="relative z-10 text-white/70 text-sm mb-4">
+            Cuéntanos de qué se trata y armamos un plan de desarrollo evolutivo.
+          </p>
+          <a href="/contacto" class="relative z-10 text-fuchsia-100 font-bold hover:underline text-sm transition-transform duration-300 group-hover:scale-105">
+            Hablemos hoy →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="max-w-4xl px-6 sm:px-12 py-16 m-auto text-center flex flex-col items-center gap-6">
+    <h2 class="font-extrabold text-3xl sm:text-4xl text-white">
+      ¿Comenzamos a moldear tu proyecto?
+    </h2>
+    <p class="text-white/85 max-w-xl text-base sm:text-lg">
+      No te preocupes si aún quedan dudas. Agenda una sesión exploratoria de 30 minutos sin costo para conversar sobre los objetivos de tu negocio y cómo podemos iniciar de la mano.
+    </p>
+    <ButtonLink
+      href="/contacto"
+      label="Agendar Sesión de 30 min"
+      btnClasses="mt-4 bg-gradient-to-r from-blue-500 via-fuchsia-500 to-cyan-500 hover:from-blue-600 hover:via-fuchsia-600 hover:to-cyan-600 text-white rounded-xl shadow-lg shadow-fuchsia-500/20 hover:shadow-fuchsia-500/40 hover:-translate-y-0.5 hover:scale-102 active:scale-95 duration-300 transition-all border-none font-semibold text-lg max-w-none sm:max-w-[320px] whitespace-nowrap"
+    />
+  </section>
+</Layout>
+
+<style lang="scss">
+  #a-tu-medida {
+    main {
+      margin-top: 100px;
+    }
+  }
+
+  .mask-centered-hero {
+    -webkit-mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1) 15%, rgba(0, 0, 0, 0) 80%);
+    mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1) 15%, rgba(0, 0, 0, 0) 80%);
+  }
+
+  .mask-centered-dashboard {
+    -webkit-mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1) 15%, rgba(0, 0, 0, 0) 80%);
+    mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1) 15%, rgba(0, 0, 0, 0) 80%);
+  }
+
+  .animate-hero-image {
+    animation: floatHero 10s ease-in-out infinite;
+  }
+
+  @keyframes floatHero {
+    0%, 100% {
+      transform: translateY(0px) scale(1);
+    }
+    50% {
+      transform: translateY(-12px) scale(1.03);
+    }
+  }
+</style>

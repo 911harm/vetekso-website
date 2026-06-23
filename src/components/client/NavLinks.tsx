@@ -3,7 +3,7 @@ import { NAV_LINKS } from "../../utils/consts";
 const NavLinks = ({ currentPathname }: { currentPathname: string }) => {
   return (
     <div
-      className="space-x-6 min-[800px]:space-x-10 w-full hidden md:block md:w-auto"
+      className="hidden md:flex items-center space-x-3 min-[850px]:space-x-6 lg:space-x-8 xl:space-x-10 w-full md:w-auto"
       id="navbar-default"
     >
       {NAV_LINKS.map(({ label, pathname }) => {
@@ -16,7 +16,7 @@ const NavLinks = ({ currentPathname }: { currentPathname: string }) => {
           <a
             key={`NavLink-${label}`}
             href={pathname}
-            className={`${isActive ? "text-fuchsia-400 font-semibold" : "text-white/80 hover:text-white"} text-base font-medium transition-all duration-300 relative py-1 px-2`}
+            className={`${isActive ? "text-fuchsia-400 font-semibold" : "text-white/80 hover:text-white"} text-sm min-[850px]:text-base font-medium transition-all duration-300 relative py-1 px-2 whitespace-nowrap`}
           >
             {label}
             {isActive && (

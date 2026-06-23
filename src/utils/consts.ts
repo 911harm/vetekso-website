@@ -16,6 +16,10 @@ export const NAV_LINKS = [
     pathname: "/servicios",
   },
   {
+    label: "A tu medida",
+    pathname: "/a-tu-medida",
+  },
+  {
     label: "Contacto",
     pathname: "/contacto",
   },
